@@ -1,39 +1,32 @@
-// 1. Two Sum
-// Given an array of integers, return indices of the two numbers such that they add up to a specific target.
-// You may assume that each input would have exactly one solution.
-// Example:
-// Given nums = [2, 7, 11, 15], target = 9,
-// Because nums[0] + nums[1] = 2 + 7 = 9,
-// return [0, 1].
+// 3. Longest Substring Without Repeating Characters
+// Given a string, find the length of the longest substring without repeating characters.
+// Examples:
+// Given "abcabcbb", the answer is "abc", which the length is 3.
+// Given "bbbbb", the answer is "b", with the length of 1.
+// Given "pwwkew", the answer is "wke", with the length of 3.
+// Note that the answer must be a substring, "pwke" is a subsequence and not a substring.
 // /**
-//  * @param {number[]} nums
-//  * @param {number} target
-//  * @return {number[]}
+//  * @param {string} s
+//  * @return {number}
 //  */
-// UPDATE (2016/2/13):
-// The return format had been changed to zero-based indices. Please read the above updated description carefully.
-var twoSum = function(nums, target) {
-  var first = 0;
-  var second = 0;
-  var map = new Map();
-  for (var i = 0; i < nums.length; i++) {
-    if ((map.has(nums[i])) && (nums[i] === target/2)) {
-      second = i;
-      first = map.get(target-nums[i]);
+var lengthOfLongestSubstring = function(s) {
+  var temp = "";
+  var str = "";
+  for (var i = 0; i < s.length; i++) {
+    if (temp.indexOf(s[i]) === -1) {
+      temp = temp+s[i];
     }
     else {
-      map.set(nums[i], i);
-      if (map.has(target-nums[i])) {
-        second = i;
-        if (second !== map.get(target-nums[i])) {
-          first = map.get(target-nums[i]);
-          break;
-        }
+      if (temp.length >= str.length) {
+        str = temp;
       }
+      temp = temp.slice(temp.indexOf(s[i])+1)+s[i];
     }
   }
-  return [first, second];
+  if (temp.length >= str.length) {
+    str = temp;
+  }
+  return str.length;
 }
-var nums = [2, 7, 11, 15];
-var target = 9;
-console.log(twoSum(nums, target));
+var s = "abcabcbb";
+console.log(lengthOfLongestSubstring(s));
