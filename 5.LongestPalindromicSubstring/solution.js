@@ -1,39 +1,52 @@
-// 1. Two Sum
-// Given an array of integers, return indices of the two numbers such that they add up to a specific target.
-// You may assume that each input would have exactly one solution.
-// Example:
-// Given nums = [2, 7, 11, 15], target = 9,
-// Because nums[0] + nums[1] = 2 + 7 = 9,
-// return [0, 1].
+// 5. Longest Palindromic Substring
+// Given a string S, find the longest palindromic substring in S.
+// You may assume that the maximum length of S is 1000, and there exists one unique longest palindromic substring.
 // /**
-//  * @param {number[]} nums
-//  * @param {number} target
-//  * @return {number[]}
+//  * @param {string} s
+//  * @return {string}
 //  */
-// UPDATE (2016/2/13):
-// The return format had been changed to zero-based indices. Please read the above updated description carefully.
-var twoSum = function(nums, target) {
-  var first = 0;
-  var second = 0;
-  var map = new Map();
-  for (var i = 0; i < nums.length; i++) {
-    if ((map.has(nums[i])) && (nums[i] === target/2)) {
-      second = i;
-      first = map.get(target-nums[i]);
+var longestPalindrome = function(s) {
+  var j = 1;
+  var str = "";
+  var temp = "";
+  if (s.length === 1) {
+    str = s;
+  }
+  else if (s.length === 2) {
+    if (s[1] === s[0]) {
+      str = s;
     }
-    else {
-      map.set(nums[i], i);
-      if (map.has(target-nums[i])) {
-        second = i;
-        if (second !== map.get(target-nums[i])) {
-          first = map.get(target-nums[i]);
-          break;
+  }
+  else {
+    for (var i = 0; i < s.length; i++) {
+      if (s[i+1] === s[i]) {
+        temp = s[i]+s[i+1];
+        j = 1;
+        while ((s[i-j] === s[i+j+1]) && ((i-j) !== -1) && ((i+j+1) !== s.length)) {
+          temp = s[i-j]+temp+s[i+j+1];
+          j++;
+        }
+        if (temp.length >= str.length) {
+          str = temp;
+        }
+      }
+      if (s[i+1] === s[i-1]) {
+        temp = s[i-1]+s[i]+s[i+1];
+        j = 1;
+        while ((s[i-j-1] === s[i+j+1]) && ((i-j-1) !== -1) && ((i+j+1) !== s.length)) {
+          temp = s[i-j-1]+temp+s[i+j+1];
+          j++;
+        }
+        if (temp.length >= str.length) {
+          str = temp;
         }
       }
     }
   }
-  return [first, second];
+  if (str === "") {
+    str = s[s.length-1];
+  }
+  return str;
 }
-var nums = [2, 7, 11, 15];
-var target = 9;
-console.log(twoSum(nums, target));
+var s = "a";
+console.log(longestPalindrome(s));
