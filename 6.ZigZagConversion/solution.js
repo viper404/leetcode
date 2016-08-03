@@ -1,39 +1,65 @@
-// 1. Two Sum
-// Given an array of integers, return indices of the two numbers such that they add up to a specific target.
-// You may assume that each input would have exactly one solution.
-// Example:
-// Given nums = [2, 7, 11, 15], target = 9,
-// Because nums[0] + nums[1] = 2 + 7 = 9,
-// return [0, 1].
+// 6. ZigZag Conversion
+// The string "PAYPALISHIRING" is written in a zigzag pattern on a given number of rows like this:
+// (you may want to display this pattern in a fixed font for better legibility)
+// P   A   H   N
+// A P L S I I G
+// Y   I   R
+// And then read line by line: "PAHNAPLSIIGYIR"
+// Write the code that will take a string and make this conversion given a number of rows:
+// string convert(string text, int nRows);
+// convert("PAYPALISHIRING", 3) should return "PAHNAPLSIIGYIR".
 // /**
-//  * @param {number[]} nums
-//  * @param {number} target
-//  * @return {number[]}
+//  * @param {string} s
+//  * @param {number} numRows
+//  * @return {string}
 //  */
-// UPDATE (2016/2/13):
-// The return format had been changed to zero-based indices. Please read the above updated description carefully.
-var twoSum = function(nums, target) {
-  var first = 0;
-  var second = 0;
-  var map = new Map();
-  for (var i = 0; i < nums.length; i++) {
-    if ((map.has(nums[i])) && (nums[i] === target/2)) {
-      second = i;
-      first = map.get(target-nums[i]);
-    }
-    else {
-      map.set(nums[i], i);
-      if (map.has(target-nums[i])) {
-        second = i;
-        if (second !== map.get(target-nums[i])) {
-          first = map.get(target-nums[i]);
-          break;
+var convert = function(s, numRows) {
+  var arr = [];
+  var str = "";
+  var left = 0;
+  var right = 0;
+  var index = 0;
+  if (numRows === 1) {
+    return s;
+  }
+  else {
+    for (var i = 1; i < numRows+1; i++) {
+      str = "";
+      left = (numRows-i)*2;
+      right = (numRows-1)*2-left;
+      index = i-1;
+      if (right === 0) {
+        while (index <= s.length-1) {
+          str = str+s[index];
+          index = index+left;
         }
       }
+      else if (left === 0) {
+        while (index <= s.length-1) {
+          str = str+s[index];
+          index = index+right;
+        }
+      }
+      else {
+        var j = 0;
+        while (index <= s.length-1) {
+          if (j%2 === 1) {
+            str = str+s[index];
+            index = index+right;
+            j++;
+          }
+          else {
+            str = str+s[index];
+            index = index+left;
+            j++;
+          }
+        }
+      }
+      arr[i-1] = str;
     }
+    return arr.join("");
   }
-  return [first, second];
 }
-var nums = [2, 7, 11, 15];
-var target = 9;
-console.log(twoSum(nums, target));
+var s = "PAYPALISHIRING";
+var numRows = 3;
+console.log(convert(s, numRows));
