@@ -1,39 +1,36 @@
-// 1. Two Sum
-// Given an array of integers, return indices of the two numbers such that they add up to a specific target.
-// You may assume that each input would have exactly one solution.
-// Example:
-// Given nums = [2, 7, 11, 15], target = 9,
-// Because nums[0] + nums[1] = 2 + 7 = 9,
-// return [0, 1].
+// 7. Reverse Integer
+// Reverse digits of an integer.
+// Example1: x = 123, return 321
+// Example2: x = -123, return -321
 // /**
-//  * @param {number[]} nums
-//  * @param {number} target
-//  * @return {number[]}
+//  * @param {number} x
+//  * @return {number}
 //  */
-// UPDATE (2016/2/13):
-// The return format had been changed to zero-based indices. Please read the above updated description carefully.
-var twoSum = function(nums, target) {
-  var first = 0;
-  var second = 0;
-  var map = new Map();
-  for (var i = 0; i < nums.length; i++) {
-    if ((map.has(nums[i])) && (nums[i] === target/2)) {
-      second = i;
-      first = map.get(target-nums[i]);
-    }
-    else {
-      map.set(nums[i], i);
-      if (map.has(target-nums[i])) {
-        second = i;
-        if (second !== map.get(target-nums[i])) {
-          first = map.get(target-nums[i]);
-          break;
-        }
-      }
-    }
+var reverse = function(x) {
+  var temp = "";
+  var str = "";
+  var num = 0;
+  if (x >= 0) {
+    temp = x.toString();
+    temp = temp.split("");
+    temp = temp.reverse();
+    str = temp.join("");
+    num = parseInt(str);
   }
-  return [first, second];
+  else {
+    temp = x.toString();
+    temp = temp.slice(1);
+    temp = temp.split("");
+    temp = temp.reverse();
+    str = "-"+temp.join("");
+    num = parseInt(str);
+  }
+  if ((num > 2147483647) || (num < -2147483648)) {
+    return 0;
+  }
+  else {
+    return num;
+  }
 }
-var nums = [2, 7, 11, 15];
-var target = 9;
-console.log(twoSum(nums, target));
+var x = 0;
+console.log(reverse(x));
