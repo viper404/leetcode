@@ -1,39 +1,26 @@
-// 1. Two Sum
-// Given an array of integers, return indices of the two numbers such that they add up to a specific target.
-// You may assume that each input would have exactly one solution.
-// Example:
-// Given nums = [2, 7, 11, 15], target = 9,
-// Because nums[0] + nums[1] = 2 + 7 = 9,
-// return [0, 1].
+// 11. Container With Most Water
+// Given n non-negative integers a1, a2, ..., an, where each represents a point at coordinate (i, ai).
+// n vertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0).
+// Find two lines, which together with x-axis forms a container, such that the container contains the most water.
+// Note: You may not slant the container.
 // /**
-//  * @param {number[]} nums
-//  * @param {number} target
-//  * @return {number[]}
+//  * @param {number[]} height
+//  * @return {number}
 //  */
-// UPDATE (2016/2/13):
-// The return format had been changed to zero-based indices. Please read the above updated description carefully.
-var twoSum = function(nums, target) {
-  var first = 0;
-  var second = 0;
-  var map = new Map();
-  for (var i = 0; i < nums.length; i++) {
-    if ((map.has(nums[i])) && (nums[i] === target/2)) {
-      second = i;
-      first = map.get(target-nums[i]);
+var maxArea = function(height) {
+  var i = 0;
+  var j = height.length-1;
+  var max = 0;
+  while (i < j) {
+    max = Math.max(max, (j-i)*Math.min(height[i], height[j]));
+    if (height[i] <= height[j]) {
+      i++;
     }
     else {
-      map.set(nums[i], i);
-      if (map.has(target-nums[i])) {
-        second = i;
-        if (second !== map.get(target-nums[i])) {
-          first = map.get(target-nums[i]);
-          break;
-        }
-      }
+      j--;
     }
   }
-  return [first, second];
+  return max;
 }
-var nums = [2, 7, 11, 15];
-var target = 9;
-console.log(twoSum(nums, target));
+var height = [1, 1];
+console.log(maxArea(height));
