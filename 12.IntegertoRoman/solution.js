@@ -1,39 +1,24 @@
-// 1. Two Sum
-// Given an array of integers, return indices of the two numbers such that they add up to a specific target.
-// You may assume that each input would have exactly one solution.
-// Example:
-// Given nums = [2, 7, 11, 15], target = 9,
-// Because nums[0] + nums[1] = 2 + 7 = 9,
-// return [0, 1].
+// 12. Integer to Roman
+// Given an integer, convert it to a roman numeral.
+// Input is guaranteed to be within the range from 1 to 3999.
 // /**
-//  * @param {number[]} nums
-//  * @param {number} target
-//  * @return {number[]}
+//  * @param {number} num
+//  * @return {string}
 //  */
-// UPDATE (2016/2/13):
-// The return format had been changed to zero-based indices. Please read the above updated description carefully.
-var twoSum = function(nums, target) {
-  var first = 0;
-  var second = 0;
-  var map = new Map();
-  for (var i = 0; i < nums.length; i++) {
-    if ((map.has(nums[i])) && (nums[i] === target/2)) {
-      second = i;
-      first = map.get(target-nums[i]);
-    }
-    else {
-      map.set(nums[i], i);
-      if (map.has(target-nums[i])) {
-        second = i;
-        if (second !== map.get(target-nums[i])) {
-          first = map.get(target-nums[i]);
-          break;
-        }
+var intToRoman = function(num) {
+  var arr = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000];
+  var str = ["I", "IV", "V", "IX", "X", "XL", "L", "XC", "C", "CD", "D", "CM", "M"];
+  var s = "";
+  for (i = arr.length-1; i >= 0; i--) {
+    if (num >= arr[i]) {
+      var k = Math.floor(num/arr[i]);
+      for (var j = 0; j < k; j++) {
+        s = s+str[i];
       }
+      num = num-k*arr[i];
     }
   }
-  return [first, second];
+  return s;
 }
-var nums = [2, 7, 11, 15];
-var target = 9;
-console.log(twoSum(nums, target));
+var num = 1;
+console.log(intToRoman(num));
