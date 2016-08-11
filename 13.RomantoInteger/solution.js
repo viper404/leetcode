@@ -1,39 +1,30 @@
-// 1. Two Sum
-// Given an array of integers, return indices of the two numbers such that they add up to a specific target.
-// You may assume that each input would have exactly one solution.
-// Example:
-// Given nums = [2, 7, 11, 15], target = 9,
-// Because nums[0] + nums[1] = 2 + 7 = 9,
-// return [0, 1].
+// 13. Roman to Integer
+// Given a roman numeral, convert it to an integer.
+// Input is guaranteed to be within the range from 1 to 3999.
 // /**
-//  * @param {number[]} nums
-//  * @param {number} target
-//  * @return {number[]}
+//  * @param {string} s
+//  * @return {number}
 //  */
-// UPDATE (2016/2/13):
-// The return format had been changed to zero-based indices. Please read the above updated description carefully.
-var twoSum = function(nums, target) {
-  var first = 0;
-  var second = 0;
-  var map = new Map();
-  for (var i = 0; i < nums.length; i++) {
-    if ((map.has(nums[i])) && (nums[i] === target/2)) {
-      second = i;
-      first = map.get(target-nums[i]);
+var romanToInt = function(s) {
+  var arr = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000];
+  var str = ["I", "IV", "V", "IX", "X", "XL", "L", "XC", "C", "CD", "D", "CM", "M"];
+  s = s.split("");
+  var num = 0;
+  for (i = str.length-1; i >= 0; i--) {
+    if (str[i].length === 2) {
+      if (s[0]+s[1] === str[i]) {
+        num = num+arr[i];
+        s.splice(0,2);
+      }
     }
     else {
-      map.set(nums[i], i);
-      if (map.has(target-nums[i])) {
-        second = i;
-        if (second !== map.get(target-nums[i])) {
-          first = map.get(target-nums[i]);
-          break;
-        }
+      while (s[0] === str[i]) {
+        num = num+arr[i];
+        s.splice(0,1);
       }
     }
   }
-  return [first, second];
+  return num;
 }
-var nums = [2, 7, 11, 15];
-var target = 9;
-console.log(twoSum(nums, target));
+var s = "DCXXI";
+console.log(romanToInt(s));
