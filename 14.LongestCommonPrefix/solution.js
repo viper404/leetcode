@@ -1,39 +1,26 @@
-// 1. Two Sum
-// Given an array of integers, return indices of the two numbers such that they add up to a specific target.
-// You may assume that each input would have exactly one solution.
-// Example:
-// Given nums = [2, 7, 11, 15], target = 9,
-// Because nums[0] + nums[1] = 2 + 7 = 9,
-// return [0, 1].
+// 14. Longest Common Prefix
+// Write a function to find the longest common prefix string amongst an array of strings.
 // /**
-//  * @param {number[]} nums
-//  * @param {number} target
-//  * @return {number[]}
+//  * @param {string[]} strs
+//  * @return {string}
 //  */
-// UPDATE (2016/2/13):
-// The return format had been changed to zero-based indices. Please read the above updated description carefully.
-var twoSum = function(nums, target) {
-  var first = 0;
-  var second = 0;
-  var map = new Map();
-  for (var i = 0; i < nums.length; i++) {
-    if ((map.has(nums[i])) && (nums[i] === target/2)) {
-      second = i;
-      first = map.get(target-nums[i]);
-    }
-    else {
-      map.set(nums[i], i);
-      if (map.has(target-nums[i])) {
-        second = i;
-        if (second !== map.get(target-nums[i])) {
-          first = map.get(target-nums[i]);
-          break;
-        }
+var longestCommonPrefix = function(strs) {
+  if (strs.length !== 0) {
+    strs.sort();
+    var str1 = strs[0];
+    var str2 = strs[strs.length-1];
+    var i = 0;
+    var pre = "";
+    while (i !== str1.length) {
+      if (str1[i] !== str2[i]) {
+        break;
       }
+      pre = pre+str1[i];
+      i++;
     }
+    return pre;
   }
-  return [first, second];
+  return "";
 }
-var nums = [2, 7, 11, 15];
-var target = 9;
-console.log(twoSum(nums, target));
+var strs = [];
+console.log(longestCommonPrefix(strs));
