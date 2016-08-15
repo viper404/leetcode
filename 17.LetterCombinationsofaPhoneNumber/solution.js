@@ -1,39 +1,44 @@
-// 1. Two Sum
-// Given an array of integers, return indices of the two numbers such that they add up to a specific target.
-// You may assume that each input would have exactly one solution.
-// Example:
-// Given nums = [2, 7, 11, 15], target = 9,
-// Because nums[0] + nums[1] = 2 + 7 = 9,
-// return [0, 1].
+// 17. Letter Combinations of a Phone Number
+// Given a digit string, return all possible letter combinations that the number could represent.
+// A mapping of digit to letters (just like on the telephone buttons) is given below.
+// Input:Digit string "23"
+// Output: ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"].
+// Note:
+// Although the above answer is in lexicographical order, your answer could be in any order you want.
 // /**
-//  * @param {number[]} nums
-//  * @param {number} target
-//  * @return {number[]}
+//  * @param {string} digits
+//  * @return {string[]}
 //  */
-// UPDATE (2016/2/13):
-// The return format had been changed to zero-based indices. Please read the above updated description carefully.
-var twoSum = function(nums, target) {
-  var first = 0;
-  var second = 0;
-  var map = new Map();
-  for (var i = 0; i < nums.length; i++) {
-    if ((map.has(nums[i])) && (nums[i] === target/2)) {
-      second = i;
-      first = map.get(target-nums[i]);
-    }
-    else {
-      map.set(nums[i], i);
-      if (map.has(target-nums[i])) {
-        second = i;
-        if (second !== map.get(target-nums[i])) {
-          first = map.get(target-nums[i]);
-          break;
-        }
-      }
-    }
+var letterCombinations = function(digits) {
+  var arrs = [[], ["*"], ["a", "b", "c"], ["d", "e", "f"], ["g", "h", "i"],
+  ["j", "k", "l"], ["m", "n", "o"], ["p", "q", "r", "s"], ["t", "u", "v"], ["w", "x", "y", "z"]];
+  if (digits.length === 0) {
+    return [];
   }
-  return [first, second];
+  else if (digits.length === 1) {
+    return arrs[digits];
+  }
+  else {
+    var arr = arrs[digits[digits.length-1]];
+    for (var i = digits.length-2; i >= 0; i--) {
+      if (digits[i] === 0) {
+        return [];
+      }
+      arr = loop(arrs[digits[i]], arr);
+    }
+    return arr;
+  }
 }
-var nums = [2, 7, 11, 15];
-var target = 9;
-console.log(twoSum(nums, target));
+function loop(arr1, arr2) {
+  var a = [];
+  var temp = [];
+  for (var i = 0; i < arr1.length; i++) {
+    for (var j in arr2) {
+      temp[j] = arr1[i]+arr2[j];
+    }
+    a = a.concat(temp);
+  }
+  return a;
+}
+var digits = "";
+console.log(letterCombinations(digits));
