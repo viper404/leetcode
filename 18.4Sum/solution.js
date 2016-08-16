@@ -1,39 +1,78 @@
-// 1. Two Sum
-// Given an array of integers, return indices of the two numbers such that they add up to a specific target.
-// You may assume that each input would have exactly one solution.
-// Example:
-// Given nums = [2, 7, 11, 15], target = 9,
-// Because nums[0] + nums[1] = 2 + 7 = 9,
-// return [0, 1].
+// 18. 4Sum
+// Given an array S of n integers, are there elements a, b, c, and d in S such that a + b + c + d = target?
+// Find all unique quadruplets in the array which gives the sum of target.
+// Note: The solution set must not contain duplicate quadruplets.
+// For example, given array S = [1, 0, -1, 0, -2, 2], and target = 0.
+// A solution set is:
+// [
+//   [-1,  0, 0, 1],
+//   [-2, -1, 1, 2],
+//   [-2,  0, 0, 2]
+// ]
 // /**
 //  * @param {number[]} nums
 //  * @param {number} target
-//  * @return {number[]}
+//  * @return {number[][]}
 //  */
-// UPDATE (2016/2/13):
-// The return format had been changed to zero-based indices. Please read the above updated description carefully.
-var twoSum = function(nums, target) {
-  var first = 0;
-  var second = 0;
-  var map = new Map();
-  for (var i = 0; i < nums.length; i++) {
-    if ((map.has(nums[i])) && (nums[i] === target/2)) {
-      second = i;
-      first = map.get(target-nums[i]);
+var fourSum = function(nums, target) {
+  nums.sort(sortNumber);
+  var arrs = [];
+  if (nums.length < 4) {
+    return [];
+  }
+  var i = 0;
+  while (i !== nums.length-3) {
+    if ((i > 0) && (nums[i] === nums[i-1])) {
+      i++;
+      continue;
     }
-    else {
-      map.set(nums[i], i);
-      if (map.has(target-nums[i])) {
-        second = i;
-        if (second !== map.get(target-nums[i])) {
-          first = map.get(target-nums[i]);
-          break;
+    var j = i+1;
+    while (j !== nums.length-2) {
+      if ((j > i+1) && (nums[j] === nums[j-1])) {
+        j++;
+        continue;
+      }
+      var m = j+1;
+      var n = nums.length-1;
+      while (m < n) {
+        var first = nums[i];
+        var second = nums[j];
+        var third = nums[m];
+        var fourth = nums[n];
+        var num = first+second+third+fourth;
+        if (num > target) {
+          n--;
+        }
+        else if (num < target) {
+          m++;
+        }
+        else {
+          var arr = [first, second, third, fourth];
+          arrs.push(arr);
+          while ((m < n) && (nums[n] === nums[n-1])) {
+            n--;
+          }
+          while ((m < n) && (nums[m] === nums[m+1])) {
+            m++;
+          }
+          if ((n-m) > 2) {
+            n--;
+            m++;
+          }
+          else {
+            n--;
+          }
         }
       }
+      j++;
     }
+    i++;
   }
-  return [first, second];
+  return arrs;
 }
-var nums = [2, 7, 11, 15];
-var target = 9;
-console.log(twoSum(nums, target));
+function sortNumber(a, b) {
+  return a-b;
+}
+var nums = [1,0,-1,0,-2,2];
+var target = 0;
+console.log(fourSum(nums, target));
