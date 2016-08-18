@@ -1,39 +1,24 @@
-// 1. Two Sum
-// Given an array of integers, return indices of the two numbers such that they add up to a specific target.
-// You may assume that each input would have exactly one solution.
-// Example:
-// Given nums = [2, 7, 11, 15], target = 9,
-// Because nums[0] + nums[1] = 2 + 7 = 9,
-// return [0, 1].
+// 20. Valid Parentheses
+// Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+// The brackets must close in the correct order, "()" and "()[]{}" are all valid but "(]" and "([)]" are not.
 // /**
-//  * @param {number[]} nums
-//  * @param {number} target
-//  * @return {number[]}
+//  * @param {string} s
+//  * @return {boolean}
 //  */
-// UPDATE (2016/2/13):
-// The return format had been changed to zero-based indices. Please read the above updated description carefully.
-var twoSum = function(nums, target) {
-  var first = 0;
-  var second = 0;
-  var map = new Map();
-  for (var i = 0; i < nums.length; i++) {
-    if ((map.has(nums[i])) && (nums[i] === target/2)) {
-      second = i;
-      first = map.get(target-nums[i]);
-    }
-    else {
-      map.set(nums[i], i);
-      if (map.has(target-nums[i])) {
-        second = i;
-        if (second !== map.get(target-nums[i])) {
-          first = map.get(target-nums[i]);
-          break;
-        }
-      }
-    }
+var isValid = function(s) {
+  var patt = /(\(\)|\{\}|\[\])*/g;
+  if (s.length%2 === 1) {
+    return false;
   }
-  return [first, second];
+  for (var i = 0; i < s.length*3; i++) {
+    s = s.replace(patt, "");
+  }
+  if (s === "") {
+    return true;
+  }
+  else {
+    return false;
+  }
 }
-var nums = [2, 7, 11, 15];
-var target = 9;
-console.log(twoSum(nums, target));
+var s = "[";
+console.log(isValid(s));
