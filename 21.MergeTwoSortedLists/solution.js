@@ -1,39 +1,85 @@
-// 1. Two Sum
-// Given an array of integers, return indices of the two numbers such that they add up to a specific target.
-// You may assume that each input would have exactly one solution.
-// Example:
-// Given nums = [2, 7, 11, 15], target = 9,
-// Because nums[0] + nums[1] = 2 + 7 = 9,
-// return [0, 1].
+// 21. Merge Two Sorted Lists
+// Merge two sorted linked lists and return it as a new list.
+// The new list should be made by splicing together the nodes of the first two lists.
 // /**
-//  * @param {number[]} nums
-//  * @param {number} target
-//  * @return {number[]}
+//  * Definition for singly-linked list.
+//  * function ListNode(val) {
+//  *     this.val = val;
+//  *     this.next = null;
+//  * }
 //  */
-// UPDATE (2016/2/13):
-// The return format had been changed to zero-based indices. Please read the above updated description carefully.
-var twoSum = function(nums, target) {
-  var first = 0;
-  var second = 0;
-  var map = new Map();
-  for (var i = 0; i < nums.length; i++) {
-    if ((map.has(nums[i])) && (nums[i] === target/2)) {
-      second = i;
-      first = map.get(target-nums[i]);
+// /**
+//  * @param {ListNode} l1
+//  * @param {ListNode} l2
+//  * @return {ListNode}
+//  */
+var mergeTwoLists = function(l1, l2) {
+  if ((l1 === null) && (l2 === null)) {
+    return [];
+  }
+  else if (l1 === null) {
+    return l2;
+  }
+  else if (l2 === null) {
+    return l1;
+  }
+  else {
+    var fast = 0;
+    var slow = 0;
+    var flag = 0;
+    if (l1.val < l2.val) {
+      fast = l1;
+      slow = l2;
+      flag = 0;
     }
     else {
-      map.set(nums[i], i);
-      if (map.has(target-nums[i])) {
-        second = i;
-        if (second !== map.get(target-nums[i])) {
-          first = map.get(target-nums[i]);
-          break;
+      fast = l2;
+      slow = l1;
+      flag = 1;
+    }
+    var temp1 = 0;
+    var temp2 = 0;
+    var temp3 = 0;
+    loop:
+    while (fast.next !== null) {
+      temp1 = fast;
+      fast = fast.next;
+      if (fast.val > slow.val) {
+        temp2 = fast;
+        fast = temp1;
+        fast.next = slow;
+        fast = fast.next;
+        while (temp2.val > fast.val) {
+          if (slow.next === null) {
+            fast.next = temp2;
+            fast = fast.next;
+            break loop;
+          }
+          temp3 = fast;
+          fast = fast.next;
+          slow = slow.next;
         }
+        fast = temp3;
+        fast.next = temp2;
+      }
+    }
+    if (flag === 0) {
+      if (slow.val < fast.val) {
+        return l1;
+      }
+      else {
+        fast.next = slow;
+        return l1;
+      }
+    }
+    if (flag === 1) {
+      if (slow.val < fast.val) {
+        return l2;
+      }
+      else {
+        fast.next = slow;
+        return l2;
       }
     }
   }
-  return [first, second];
 }
-var nums = [2, 7, 11, 15];
-var target = 9;
-console.log(twoSum(nums, target));
