@@ -1,39 +1,30 @@
-// 1. Two Sum
-// Given an array of integers, return indices of the two numbers such that they add up to a specific target.
-// You may assume that each input would have exactly one solution.
-// Example:
-// Given nums = [2, 7, 11, 15], target = 9,
-// Because nums[0] + nums[1] = 2 + 7 = 9,
-// return [0, 1].
+// 24. Swap Nodes in Pairs
+// Given a linked list, swap every two adjacent nodes and return its head.
+// For example,
+// Given 1->2->3->4, you should return the list as 2->1->4->3.
+// Your algorithm should use only constant space. You may not modify the values in the list, only nodes itself can be changed.
 // /**
-//  * @param {number[]} nums
-//  * @param {number} target
-//  * @return {number[]}
+//  * Definition for singly-linked list.
+//  * function ListNode(val) {
+//  *     this.val = val;
+//  *     this.next = null;
+//  * }
 //  */
-// UPDATE (2016/2/13):
-// The return format had been changed to zero-based indices. Please read the above updated description carefully.
-var twoSum = function(nums, target) {
-  var first = 0;
-  var second = 0;
-  var map = new Map();
-  for (var i = 0; i < nums.length; i++) {
-    if ((map.has(nums[i])) && (nums[i] === target/2)) {
-      second = i;
-      first = map.get(target-nums[i]);
-    }
-    else {
-      map.set(nums[i], i);
-      if (map.has(target-nums[i])) {
-        second = i;
-        if (second !== map.get(target-nums[i])) {
-          first = map.get(target-nums[i]);
-          break;
-        }
-      }
-    }
+// /**
+//  * @param {ListNode} head
+//  * @return {ListNode}
+//  */
+var swapPairs = function(head) {
+  if (head === null) {
+    return null;
   }
-  return [first, second];
+  if (head.next !== null) {
+    var i = head;
+    var j = i.next;
+    var k = j.next;
+    j.next = i;
+    i.next = swapPairs(k);
+    head = j;
+  }
+  return head;
 }
-var nums = [2, 7, 11, 15];
-var target = 9;
-console.log(twoSum(nums, target));
