@@ -1,39 +1,43 @@
-// 1. Two Sum
-// Given an array of integers, return indices of the two numbers such that they add up to a specific target.
-// You may assume that each input would have exactly one solution.
+// 27. Remove Element
+// Given an array and a value, remove all instances of that value in place and return the new length.
+// Do not allocate extra space for another array, you must do this in place with constant memory.
+// The order of elements can be changed. It doesn't matter what you leave beyond the new length.
 // Example:
-// Given nums = [2, 7, 11, 15], target = 9,
-// Because nums[0] + nums[1] = 2 + 7 = 9,
-// return [0, 1].
+// Given input array nums = [3,2,2,3], val = 3
+// Your function should return length = 2, with the first two elements of nums being 2.
+// Hint:
+// 1. Try two pointers.
+// 2. Did you use the property of "the order of elements can be changed"?
+// 3. What happens when the elements to remove are rare?
 // /**
 //  * @param {number[]} nums
-//  * @param {number} target
-//  * @return {number[]}
+//  * @param {number} val
+//  * @return {number}
 //  */
-// UPDATE (2016/2/13):
-// The return format had been changed to zero-based indices. Please read the above updated description carefully.
-var twoSum = function(nums, target) {
-  var first = 0;
-  var second = 0;
-  var map = new Map();
-  for (var i = 0; i < nums.length; i++) {
-    if ((map.has(nums[i])) && (nums[i] === target/2)) {
-      second = i;
-      first = map.get(target-nums[i]);
+var removeElement = function(nums, val) {
+  if (nums.length === 0) {
+    return 0;
+  }
+  var slow = 0;
+  var last = nums.length-1;
+  for (var fast = 0; fast < last+1; fast++) {
+    if (nums[fast] === val) {
+      while (nums[last] === val) {
+        last--;
+      }
+      if (last < fast) {
+        break;
+      }
+      nums[slow] = nums[last];
+      last--;
+      slow++;
     }
     else {
-      map.set(nums[i], i);
-      if (map.has(target-nums[i])) {
-        second = i;
-        if (second !== map.get(target-nums[i])) {
-          first = map.get(target-nums[i]);
-          break;
-        }
-      }
+      slow++;
     }
   }
-  return [first, second];
+  return slow;
 }
-var nums = [2, 7, 11, 15];
-var target = 9;
-console.log(twoSum(nums, target));
+var nums = [3,2,2,3];
+var val = 3;
+console.log(removeElement(nums, val));
