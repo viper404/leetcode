@@ -1,39 +1,67 @@
-// 1. Two Sum
-// Given an array of integers, return indices of the two numbers such that they add up to a specific target.
-// You may assume that each input would have exactly one solution.
-// Example:
-// Given nums = [2, 7, 11, 15], target = 9,
-// Because nums[0] + nums[1] = 2 + 7 = 9,
-// return [0, 1].
+// 29. Divide Two Integers
+// Divide two integers without using multiplication, division and mod operator.
+// If it is overflow, return MAX_INT.
 // /**
-//  * @param {number[]} nums
-//  * @param {number} target
-//  * @return {number[]}
+//  * @param {number} dividend
+//  * @param {number} divisor
+//  * @return {number}
 //  */
-// UPDATE (2016/2/13):
-// The return format had been changed to zero-based indices. Please read the above updated description carefully.
-var twoSum = function(nums, target) {
-  var first = 0;
-  var second = 0;
-  var map = new Map();
-  for (var i = 0; i < nums.length; i++) {
-    if ((map.has(nums[i])) && (nums[i] === target/2)) {
-      second = i;
-      first = map.get(target-nums[i]);
+var divide = function(dividend, divisor) {
+  if (divisor === 0) {
+    return 0;
+  }
+  var flag = (((dividend > 0) && (divisor > 0)) || ((dividend < 0) && (divisor < 0))) ? false : true;
+  dividend = Math.abs(dividend);
+  divisor= Math.abs(divisor);
+  var str1 = dividend.toString();
+  var str2 = divisor.toString();
+  var temp = [];
+  if (str1.length === str2.length) {
+    temp = minus(dividend, divisor);
+    if (flag) {
+      return (-temp[0] < -2147483648) ? -2147483648 : -temp[0];
+    }
+    return (temp[0] > 2147483647) ? 2147483647 : temp[0];
+  }
+  else {
+    if (dividend < divisor) {
+      return 0;
     }
     else {
-      map.set(nums[i], i);
-      if (map.has(target-nums[i])) {
-        second = i;
-        if (second !== map.get(target-nums[i])) {
-          first = map.get(target-nums[i]);
-          break;
-        }
+      var n = 0;
+      var arr = [str2];
+      var times = ["1"];
+      for (var i = 0; i < str1.length-str2.length; i++) {
+        arr.push(arr[arr.length-1]+"0");
+        times.push(times[times.length-1]+"0");
       }
+      for (var j = arr.length-1; j > -1; j--) {
+        temp = minus(dividend, parseInt(arr[j]));
+        for (var k = 0; k < temp[0]; k++) {
+          n = n+parseInt(times[j]);
+        }
+        dividend = temp[1];
+      }
+      if (flag) {
+        return (-n < -2147483648) ? -2147483648 : -n;
+      }
+      return (n > 2147483647) ? 2147483647 : n;
     }
   }
-  return [first, second];
 }
-var nums = [2, 7, 11, 15];
-var target = 9;
-console.log(twoSum(nums, target));
+function minus(num1, num2) {
+  var count = 0;
+  if (num1 < num2) {
+    return [count, num1];
+  }
+  else {
+    while (num1 >= 0) {
+      num1 = num1-num2;
+      count++;
+    }
+    return [count-1, num1+num2];
+  }
+}
+var dividend = 0;
+var divisor = 1;
+console.log(divide(dividend, divisor));
