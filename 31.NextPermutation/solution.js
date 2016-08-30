@@ -1,39 +1,50 @@
-// 1. Two Sum
-// Given an array of integers, return indices of the two numbers such that they add up to a specific target.
-// You may assume that each input would have exactly one solution.
-// Example:
-// Given nums = [2, 7, 11, 15], target = 9,
-// Because nums[0] + nums[1] = 2 + 7 = 9,
-// return [0, 1].
+// 31. Next Permutation
+// Implement next permutation, which rearranges numbers into the lexicographically next greater permutation of numbers.
+// If such arrangement is not possible, it must rearrange it as the lowest possible order (ie, sorted in ascending order).
+// The replacement must be in-place, do not allocate extra memory.
+// Here are some examples. Inputs are in the left-hand column and its corresponding outputs are in the right-hand column.
+// 1,2,3 → 1,3,2
+// 3,2,1 → 1,2,3
+// 1,1,5 → 1,5,1
 // /**
 //  * @param {number[]} nums
-//  * @param {number} target
-//  * @return {number[]}
+//  * @return {void} Do not return anything, modify nums in-place instead.
 //  */
-// UPDATE (2016/2/13):
-// The return format had been changed to zero-based indices. Please read the above updated description carefully.
-var twoSum = function(nums, target) {
-  var first = 0;
-  var second = 0;
-  var map = new Map();
-  for (var i = 0; i < nums.length; i++) {
-    if ((map.has(nums[i])) && (nums[i] === target/2)) {
-      second = i;
-      first = map.get(target-nums[i]);
-    }
-    else {
-      map.set(nums[i], i);
-      if (map.has(target-nums[i])) {
-        second = i;
-        if (second !== map.get(target-nums[i])) {
-          first = map.get(target-nums[i]);
-          break;
-        }
-      }
-    }
+var nextPermutation = function(nums) {
+  if (nums.length === 1) {
+    return;
   }
-  return [first, second];
+  if (nums.length === 2) {
+    helper(nums, 0, nums.length-1);
+    return;
+  }
+  var i = nums.length-2;
+  while (nums[i] >= nums[i+1]) {
+    i--;
+  }
+  if (i !== -1) {
+    var j = nums.length-1;
+    while (nums[j] <= nums[i]) {
+      j--;
+    }
+    var temp = nums[i];
+    nums[i] = nums[j];
+    nums[j] = temp;
+    helper(nums, i+1, nums.length-1);
+  }
+  else {
+    helper(nums, 0, nums.length-1);
+  }
+  return;
 }
-var nums = [2, 7, 11, 15];
-var target = 9;
-console.log(twoSum(nums, target));
+function helper(arr, begin, end) {
+  while (begin < end) {
+    var temp = arr[end];
+    arr[end] = arr[begin];
+    arr[begin] = temp;
+    begin++;
+    end--;
+  }
+}
+var nums = [1];
+console.log(nextPermutation(nums));
