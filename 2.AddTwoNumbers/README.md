@@ -1,5 +1,6 @@
 ## 2.AddTwoNumbers
-## solution by [dchen0215](https://discuss.leetcode.com/topic/6220/my-accepted-java-solution)
+> ## solution by [dchen0215](https://discuss.leetcode.com/topic/6220/my-accepted-java-solution)
+
 ```javascript
 var addTwoNumbers = function(l1, l2) {
   var previous = new ListNode(0);
@@ -17,7 +18,8 @@ var addTwoNumbers = function(l1, l2) {
   return head.next;
 }
 ```
-## solution by viper404
+> ## solution by viper404
+
 ```javascript
 var addTwoNumbers = function(l1, l2) {
   var larger = 0;
