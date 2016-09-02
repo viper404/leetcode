@@ -1,5 +1,6 @@
 ## 5.LongestPalindromicSubstring
-## solution by [liji94188](https://discuss.leetcode.com/topic/21848/ac-relatively-short-and-very-clear-java-solution)
+> ## solution by [liji94188](https://discuss.leetcode.com/topic/21848/ac-relatively-short-and-very-clear-java-solution)
+
 ```javascript
 var longestPalindrome = function(s) {
   var str = "";
@@ -30,7 +31,8 @@ function isPalindrome(s, begin, end) {
   return true;
 }
 ```
-## solution by viper404
+> ## solution by viper404
+
 ```javascript
 var longestPalindrome = function(s) {
   var j = 1;
