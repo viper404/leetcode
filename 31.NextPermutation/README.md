@@ -1,5 +1,6 @@
 ## 31.NextPermutation
-## solution by [jianchao.li.fighter](https://discuss.leetcode.com/topic/15216/a-simple-algorithm-from-wikipedia-with-c-implementation-can-be-used-in-permutations-and-permutations-ii)
+> ## solution by [jianchao.li.fighter](https://discuss.leetcode.com/topic/15216/a-simple-algorithm-from-wikipedia-with-c-implementation-can-be-used-in-permutations-and-permutations-ii)
+
 ```javascript
 var nextPermutation = function(nums) {
   var k = -1;
@@ -36,7 +37,8 @@ function reverse(arr, begin, end) {
   }
 }
 ```
-## solution by viper404
+> ## solution by viper404
+
 ```javascript
 var nextPermutation = function(nums) {
   if (nums.length === 1) {
