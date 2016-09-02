@@ -1,5 +1,6 @@
 ## 8.StringtoInteger-atoi
-## solution by [annieqt](https://discuss.leetcode.com/topic/2666/my-simple-solution)
+> ## solution by [annieqt](https://discuss.leetcode.com/topic/2666/my-simple-solution)
+
 ```javascript
 var myAtoi = function(str) {
   if (str.length === 0) {
@@ -25,7 +26,8 @@ var myAtoi = function(str) {
   return symbol*num;
 }
 ```
-## solution by viper404
+> ## solution by viper404
+
 ```javascript
 var myAtoi = function(str) {
   var patt = /(\+)*(\-)*(\d)*/g;
