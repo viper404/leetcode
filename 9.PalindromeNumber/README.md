@@ -1,5 +1,6 @@
 ## 9.PalindromeNumber
-## solution by [cbmbbz](https://discuss.leetcode.com/topic/8090/9-line-accepted-java-code-without-the-need-of-handling-overflow)
+> ## solution by [cbmbbz](https://discuss.leetcode.com/topic/8090/9-line-accepted-java-code-without-the-need-of-handling-overflow)
+
 ```javascript
 var isPalindrome = function(x) {
   if ((x < 0) || ((x !== 0) && (x%10 === 0))) {
@@ -13,7 +14,8 @@ var isPalindrome = function(x) {
   return ((x === rest) || (x === Math.floor(rest/10)));
 }
 ```
-## solution by viper404
+> ## solution by viper404
+
 ```javascript
 var isPalindrome = function(x) {
   if (x < 0) {
