@@ -1,5 +1,6 @@
 ## 20.ValidParentheses
-## solution by [daniel52](https://discuss.leetcode.com/topic/9006/java-solution-with-stack-very-easy-to-read-straightforward)
+> ## solution by [daniel52](https://discuss.leetcode.com/topic/9006/java-solution-with-stack-very-easy-to-read-straightforward)
+
 ```javascript
 var isValid = function(s) {
   var map = new Map();
@@ -28,7 +29,8 @@ var isValid = function(s) {
   }
 }
 ```
-## solution by viper404
+> ## solution by viper404
+
 ```javascript
 var isValid = function(s) {
   var patt = /(\(\)|\{\}|\[\])*/g;
