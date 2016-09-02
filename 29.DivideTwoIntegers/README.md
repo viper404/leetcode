@@ -1,5 +1,6 @@
 ## 29.DivideTwoIntegers
-## solution by [jianchao.li.fighter](https://discuss.leetcode.com/topic/15568/detailed-explained-8ms-c-solution)
+> ## solution by [jianchao.li.fighter](https://discuss.leetcode.com/topic/15568/detailed-explained-8ms-c-solution)
+
 ```javascript
 var divide = function(dividend, divisor) {
   if (divisor === 0) {
@@ -25,7 +26,8 @@ var divide = function(dividend, divisor) {
   return result;
 }
 ```
-## solution by viper404
+> ## solution by viper404
+
 ```javascript
 var divide = function(dividend, divisor) {
   if (divisor === 0) {
