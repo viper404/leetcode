@@ -1,5 +1,6 @@
 ## 18.4Sum
-## solution by [ElementNotFoundException](https://discuss.leetcode.com/topic/33433/java-a-little-bit-faster-than-other-common-methods-9ms-beats-95)
+> ## solution by [ElementNotFoundException](https://discuss.leetcode.com/topic/33433/java-a-little-bit-faster-than-other-common-methods-9ms-beats-95)
+
 ```javascript
 var fourSum = function(nums, target) {
   if (nums.length < 4) {
@@ -51,7 +52,8 @@ function sortNumber(a, b) {
   return a-b;
 }
 ```
-## solution by viper404
+> ## solution by viper404
+
 ```javascript
 var fourSum = function(nums, target) {
   nums.sort(sortNumber);
