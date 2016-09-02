@@ -1,5 +1,6 @@
 ## 24.SwapNodesinPairs
-## solution by [tusizi](https://discuss.leetcode.com/topic/10649/my-simple-java-solution-for-share)
+> ## solution by [tusizi](https://discuss.leetcode.com/topic/10649/my-simple-java-solution-for-share)
+
 ```javascript
 var swapPairs = function(head) {
   var dummy = new ListNode(0);
@@ -16,7 +17,8 @@ var swapPairs = function(head) {
   return dummy.next;
 }
 ```
-## solution by viper404
+> ## solution by viper404
+
 ```javascript
 var swapPairs = function(head) {
   if (head === null) {
