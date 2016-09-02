@@ -1,5 +1,6 @@
 ## 21.MergeTwoSortedLists
-## solution by [nightowl](https://discuss.leetcode.com/topic/22199/simple-recursive-java-solution)
+> ## solution by [nightowl](https://discuss.leetcode.com/topic/22199/simple-recursive-java-solution)
+
 ```javascript
 var mergeTwoLists = function(l1, l2) {
   if (l1 === null) {
@@ -18,7 +19,8 @@ var mergeTwoLists = function(l1, l2) {
   }
 }
 ```
-## solution by viper404
+> ## solution by viper404
+
 ```javascript
 var mergeTwoLists = function(l1, l2) {
   if ((l1 === null) && (l2 === null)) {
