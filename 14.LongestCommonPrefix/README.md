@@ -1,5 +1,6 @@
 ## 14.LongestCommonPrefix
-## solution by [StefanPochmann](https://discuss.leetcode.com/topic/6987/java-code-with-13-lines)
+> ## solution by [StefanPochmann](https://discuss.leetcode.com/topic/6987/java-code-with-13-lines)
+
 ```javascript
 var longestCommonPrefix = function(strs) {
   if (strs.length === 0) {
@@ -14,7 +15,8 @@ var longestCommonPrefix = function(strs) {
   return str;
 }
 ```
-## solution by viper404
+> ## solution by viper404
+
 ```javascript
 var longestCommonPrefix = function(strs) {
   if (strs.length !== 0) {
