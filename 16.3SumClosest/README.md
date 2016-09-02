@@ -1,5 +1,6 @@
 ## 16.3SumClosest
-## solution by [spritmouselet](https://discuss.leetcode.com/topic/5192/java-solution-with-o-n2-for-reference)
+> ## solution by [spritmouselet](https://discuss.leetcode.com/topic/5192/java-solution-with-o-n2-for-reference)
+
 ```javascript
 var threeSumClosest = function(nums, target) {
   if (nums.length < 3) {
@@ -48,7 +49,8 @@ function sortNumber(a, b) {
   return a-b;
 }
 ```
-## solution by viper404
+> ## solution by viper404
+
 ```javascript
 var threeSumClosest = function(nums, target) {
   nums.sort(sortNumber);
