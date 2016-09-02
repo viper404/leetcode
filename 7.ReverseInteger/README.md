@@ -1,5 +1,6 @@
 ## 7.ReverseInteger
-## solution by [bitzhuwei](https://discuss.leetcode.com/topic/6104/my-accepted-15-lines-of-code-for-java)
+> ## solution by [bitzhuwei](https://discuss.leetcode.com/topic/6104/my-accepted-15-lines-of-code-for-java)
+
 ```javascript
 var reverse = function(x) {
   var y = 0;
@@ -25,7 +26,8 @@ var reverse = function(x) {
   return y;
 }
 ```
-## solution by viper404
+> ## solution by viper404
+
 ```javascript
 var reverse = function(x) {
   var temp = "";
