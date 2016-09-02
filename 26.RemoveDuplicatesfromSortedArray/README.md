@@ -1,5 +1,6 @@
 ## 26.RemoveDuplicatesfromSortedArray
-## solution by [StefanPochmann](https://discuss.leetcode.com/topic/17252/5-lines-c-java-nicer-loops)
+> ## solution by [StefanPochmann](https://discuss.leetcode.com/topic/17252/5-lines-c-java-nicer-loops)
+
 ```javascript
 var removeDuplicates = function(nums) {
   var i = (nums.length > 0) ? 1 : 0;
@@ -11,7 +12,8 @@ var removeDuplicates = function(nums) {
   return i;
 }
 ```
-## solution by viper404
+> ## solution by viper404
+
 ```javascript
 var removeDuplicates = function(nums) {
   if (nums.length === 0) {
