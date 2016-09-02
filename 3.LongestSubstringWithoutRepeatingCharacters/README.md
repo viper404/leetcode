@@ -1,5 +1,6 @@
 ## 3.LongestSubstringWithoutRepeatingCharacters
-## solution by [cbmbbz](https://discuss.leetcode.com/topic/8232/11-line-simple-java-solution-o-n-with-explanation)
+> ## solution by [cbmbbz](https://discuss.leetcode.com/topic/8232/11-line-simple-java-solution-o-n-with-explanation)
+
 ```javascript
 var lengthOfLongestSubstring = function(s) {
   var j = 0;
@@ -15,7 +16,8 @@ var lengthOfLongestSubstring = function(s) {
   return max;
 }
 ```
-## solution by viper404
+> ## solution by viper404
+
 ```javascript
 var lengthOfLongestSubstring = function(s) {
   var temp = "";
