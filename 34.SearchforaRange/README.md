@@ -1,5 +1,6 @@
 ## 34.SearchforaRange
-## solution by [stellari](https://discuss.leetcode.com/topic/5891/clean-iterative-solution-with-two-binary-searches-with-explanation)
+> ## solution by [stellari](https://discuss.leetcode.com/topic/5891/clean-iterative-solution-with-two-binary-searches-with-explanation)
+
 ```javascript
 var searchRange = function(nums, target) {
   var i = 0;
@@ -27,7 +28,8 @@ var searchRange = function(nums, target) {
   return result;
 }
 ```
-## solution by viper404
+> ## solution by viper404
+
 ```javascript
 var searchRange = function(nums, target) {
   var i = 0;
