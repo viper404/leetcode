@@ -1,5 +1,6 @@
 ## 28.Implement-strStr
-## solution by [jeantimex](https://discuss.leetcode.com/topic/18839/elegant-java-solution)
+> ## solution by [jeantimex](https://discuss.leetcode.com/topic/18839/elegant-java-solution)
+
 ```javascript
 var strStr = function(haystack, needle) {
   for (var i = 0; ; i++) {
@@ -17,7 +18,8 @@ var strStr = function(haystack, needle) {
   }
 }
 ```
-## solution by viper404
+> ## solution by viper404
+
 ```javascript
 var strStr = function(haystack, needle) {
   if (needle === "") {
