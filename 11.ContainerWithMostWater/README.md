@@ -1,5 +1,6 @@
 ## 11.ContainerWithMostWater
-## solution by [kongweihan](https://discuss.leetcode.com/topic/3462/yet-another-way-to-see-what-happens-in-the-o-n-algorithm)
+> ## solution by [kongweihan](https://discuss.leetcode.com/topic/3462/yet-another-way-to-see-what-happens-in-the-o-n-algorithm)
+
 ```javascript
 var maxArea = function(height) {
   var max = 0;
@@ -12,7 +13,8 @@ var maxArea = function(height) {
   return max;
 }
 ```
-## solution by viper404
+> ## solution by viper404
+
 ```javascript
 var maxArea = function(height) {
   var i = 0;
