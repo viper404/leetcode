@@ -1,5 +1,6 @@
 ## 19.RemoveNthNodeFromEndofList
-## solution by [TMS](https://discuss.leetcode.com/topic/7031/simple-java-solution-in-one-pass)
+> ## solution by [TMS](https://discuss.leetcode.com/topic/7031/simple-java-solution-in-one-pass)
+
 ```javascript
 var removeNthFromEnd = function(head, n) {
   var start = new ListNode(0);
@@ -17,7 +18,8 @@ var removeNthFromEnd = function(head, n) {
   return start.next;
 }
 ```
-## solution by viper404
+> ## solution by viper404
+
 ```javascript
 var removeNthFromEnd = function(head, n) {
   var fast = head;
