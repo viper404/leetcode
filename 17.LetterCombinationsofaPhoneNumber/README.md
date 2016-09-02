@@ -1,5 +1,6 @@
 ## 17.LetterCombinationsofaPhoneNumber
-## solution by [lirensun](https://discuss.leetcode.com/topic/8465/my-java-solution-with-fifo-queue)
+> ## solution by [lirensun](https://discuss.leetcode.com/topic/8465/my-java-solution-with-fifo-queue)
+
 ```javascript
 var letterCombinations = function(digits) {
   if (digits.length === 0) {
@@ -22,7 +23,8 @@ var letterCombinations = function(digits) {
   return arr;
 }
 ```
-## solution by viper404
+> ## solution by viper404
+
 ```javascript
 var letterCombinations = function(digits) {
   var arrs = [[], ["*"], ["a", "b", "c"], ["d", "e", "f"], ["g", "h", "i"],
