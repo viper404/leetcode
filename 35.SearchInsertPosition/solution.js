@@ -1,39 +1,37 @@
-// 1. Two Sum
-// Given an array of integers, return indices of the two numbers such that they add up to a specific target.
-// You may assume that each input would have exactly one solution.
-// Example:
-// Given nums = [2, 7, 11, 15], target = 9,
-// Because nums[0] + nums[1] = 2 + 7 = 9,
-// return [0, 1].
+// 35. Search Insert Position
+// Given a sorted array and a target value, return the index if the target is found.
+// If not, return the index where it would be if it were inserted in order.
+// You may assume no duplicates in the array.
+// Here are few examples.
+// [1,3,5,6], 5 → 2
+// [1,3,5,6], 2 → 1
+// [1,3,5,6], 7 → 4
+// [1,3,5,6], 0 → 0
 // /**
 //  * @param {number[]} nums
 //  * @param {number} target
-//  * @return {number[]}
+//  * @return {number}
 //  */
-// UPDATE (2016/2/13):
-// The return format had been changed to zero-based indices. Please read the above updated description carefully.
-var twoSum = function(nums, target) {
-  var first = 0;
-  var second = 0;
-  var map = new Map();
-  for (var i = 0; i < nums.length; i++) {
-    if ((map.has(nums[i])) && (nums[i] === target/2)) {
-      second = i;
-      first = map.get(target-nums[i]);
-    }
-    else {
-      map.set(nums[i], i);
-      if (map.has(target-nums[i])) {
-        second = i;
-        if (second !== map.get(target-nums[i])) {
-          first = map.get(target-nums[i]);
-          break;
-        }
+var searchInsert = function(nums, target) {
+  if (target < nums[0]) {
+    return 0;
+  }
+  else if (target > nums[nums.length-1]) {
+    return nums.length;
+  }
+  else {
+    for (var i = 0; i < nums.length; i++) {
+      if (nums[i] === target) {
+        return i;
+      }
+      else if (nums[i+1] === target) {
+        return i+1;
+      }
+      else if ((nums[i] < target) && (target < nums[i+1])) {
+        return i+1;
       }
     }
   }
-  return [first, second];
 }
-var nums = [2, 7, 11, 15];
-var target = 9;
-console.log(twoSum(nums, target));
+var nums = [1];
+var target = 0;
