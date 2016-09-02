@@ -1,5 +1,6 @@
 ## 22.GenerateParentheses
-## solution by [left.peter](https://discuss.leetcode.com/topic/3474/an-iterative-method)
+> ## solution by [left.peter](https://discuss.leetcode.com/topic/3474/an-iterative-method)
+
 ```javascript
 var generateParenthesis = function(n) {
   var arrs = [];
@@ -28,7 +29,8 @@ var generateParenthesis = function(n) {
   return arrs[arrs.length-1].sort();
 }
 ```
-## solution by viper404
+> ## solution by viper404
+
 ```javascript
 var generateParenthesis = function(n) {
   var arr = [];
