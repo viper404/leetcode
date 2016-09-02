@@ -1,5 +1,6 @@
 ## 1.TwoSum
-## solution by [waisuan](https://discuss.leetcode.com/topic/16687/my-short-java-solution-o-n-hashmap)
+> ## solution by [waisuan](https://discuss.leetcode.com/topic/16687/my-short-java-solution-o-n-hashmap)
+
 ```javascript
 var twoSum = function(nums, target) {
   var map = new Map();
@@ -11,7 +12,8 @@ var twoSum = function(nums, target) {
   }
 }
 ```
-## solution by viper404
+> ## solution by viper404
+
 ```javascript
 var twoSum = function(nums, target) {
   var first = 0;
