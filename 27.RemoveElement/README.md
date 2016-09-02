@@ -1,5 +1,6 @@
 ## 27.RemoveElement
-## solution by [cbmbbz](https://discuss.leetcode.com/topic/5205/9-line-java-solution)
+> ## solution by [cbmbbz](https://discuss.leetcode.com/topic/5205/9-line-java-solution)
+
 ```javascript
 var removeElement = function(nums, val) {
   var len = nums.length;
@@ -11,7 +12,8 @@ var removeElement = function(nums, val) {
   return len;
 }
 ```
-## solution by viper404
+> ## solution by viper404
+
 ```javascript
 var removeElement = function(nums, val) {
   if (nums.length === 0) {
