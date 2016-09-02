@@ -1,5 +1,6 @@
 ## 6.ZigZagConversion
-## solution by [dylan_yu](https://discuss.leetcode.com/topic/3162/easy-to-understand-java-solution)
+> ## solution by [dylan_yu](https://discuss.leetcode.com/topic/3162/easy-to-understand-java-solution)
+
 ```javascript
 var convert = function(s, numRows) {
   var arr = new Array(numRows);
@@ -20,7 +21,8 @@ var convert = function(s, numRows) {
   return arr.join("");
 }
 ```
-## solution by viper404
+> ## solution by viper404
+
 ```javascript
 var convert = function(s, numRows) {
   var arr = [];
