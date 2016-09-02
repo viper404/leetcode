@@ -1,5 +1,6 @@
 ## 15.3Sum
-## solution by [yavinci](https://discuss.leetcode.com/topic/28857/easiest-java-solution)
+> ## solution by [yavinci](https://discuss.leetcode.com/topic/28857/easiest-java-solution)
+
 ```javascript
 var threeSum = function(nums) {
   if (nums.length < 3) {
@@ -40,7 +41,8 @@ function sortNumber(a, b) {
   return a-b;
 }
 ```
-## solution by viper404
+> ## solution by viper404
+
 ```javascript
 var threeSum = function(nums) {
   nums.sort(sortNumber);
