@@ -1,39 +1,52 @@
-// 1. Two Sum
-// Given an array of integers, return indices of the two numbers such that they add up to a specific target.
-// You may assume that each input would have exactly one solution.
-// Example:
-// Given nums = [2, 7, 11, 15], target = 9,
-// Because nums[0] + nums[1] = 2 + 7 = 9,
-// return [0, 1].
+// 36. Valid Sudoku
+// Determine if a Sudoku is valid, according to: Sudoku Puzzles - The Rules.
+// The Sudoku board could be partially filled, where empty cells are filled with the character '.'.
+// Note:
+// A valid Sudoku board (partially filled) is not necessarily solvable. Only the filled cells need to be validated.
 // /**
-//  * @param {number[]} nums
-//  * @param {number} target
-//  * @return {number[]}
+//  * @param {character[][]} board
+//  * @return {boolean}
 //  */
-// UPDATE (2016/2/13):
-// The return format had been changed to zero-based indices. Please read the above updated description carefully.
-var twoSum = function(nums, target) {
-  var first = 0;
-  var second = 0;
-  var map = new Map();
-  for (var i = 0; i < nums.length; i++) {
-    if ((map.has(nums[i])) && (nums[i] === target/2)) {
-      second = i;
-      first = map.get(target-nums[i]);
+var isValidSudoku = function(board) {
+  var str = "";
+  for (var i = 0; i < board.length; i++) {
+    str = str+board[i].join("");
+  }
+  for (var j = 0; j < 9; j++) {
+    var str1 = str[0+9*j]+str[1+9*j]+str[2+9*j]+str[3+9*j]+str[4+9*j]+str[5+9*j]+str[6+9*j]+str[7+9*j]+str[8+9*j];
+    var str2 = str[0+j]+str[9+j]+str[18+j]+str[27+j]+str[36+j]+str[45+j]+str[54+j]+str[63+j]+str[72+j];
+    if (helper(str1) || helper(str2)) {
+      return false;
     }
-    else {
-      map.set(nums[i], i);
-      if (map.has(target-nums[i])) {
-        second = i;
-        if (second !== map.get(target-nums[i])) {
-          first = map.get(target-nums[i]);
-          break;
-        }
+  }
+  for (var m = 0; m < 3; m++) {
+    for (var n = 0; n < 3; n++) {
+      var str3 = str[0+27*m+3*n]+str[1+27*m+3*n]+str[2+27*m+3*n]+str[9+27*m+3*n]+str[10+27*m+3*n]+str[11+27*m+3*n]
+      +str[18+27*m+3*n]+str[19+27*m+3*n]+str[20+27*m+3*n];
+      if (helper(str3)) {
+        return false;
       }
     }
   }
-  return [first, second];
+  return true;
 }
-var nums = [2, 7, 11, 15];
-var target = 9;
-console.log(twoSum(nums, target));
+function helper(str) {
+  var patt = /\./g;
+  str = str.replace(patt, "");
+  str = str.split("");
+  str.sort(sortNumber);
+  if (str.length === 0) {
+    return false;
+  }
+  for (var i = 0; i < str.length-1; i++) {
+    if (str[i] === str[i+1]) {
+      return true;
+    }
+  }
+  return false;
+}
+function sortNumber(a, b) {
+    return a-b;
+}
+var board = [".87654321","2........","3........","4........","5........","6........","7........","8........","9........"];
+console.log(isValidSudoku(board));
