@@ -1,39 +1,34 @@
-// 1. Two Sum
-// Given an array of integers, return indices of the two numbers such that they add up to a specific target.
-// You may assume that each input would have exactly one solution.
-// Example:
-// Given nums = [2, 7, 11, 15], target = 9,
-// Because nums[0] + nums[1] = 2 + 7 = 9,
-// return [0, 1].
+// 38. Count and Say
+// The count-and-say sequence is the sequence of integers beginning as follows:
+// 1, 11, 21, 1211, 111221, ...
+// 1 is read off as "one 1" or 11.
+// 11 is read off as "two 1s" or 21.
+// 21 is read off as "one 2, then one 1" or 1211.
+// Given an integer n, generate the nth sequence.
+// Note: The sequence of integers will be represented as a string.
 // /**
-//  * @param {number[]} nums
-//  * @param {number} target
-//  * @return {number[]}
+//  * @param {number} n
+//  * @return {string}
 //  */
-// UPDATE (2016/2/13):
-// The return format had been changed to zero-based indices. Please read the above updated description carefully.
-var twoSum = function(nums, target) {
-  var first = 0;
-  var second = 0;
-  var map = new Map();
-  for (var i = 0; i < nums.length; i++) {
-    if ((map.has(nums[i])) && (nums[i] === target/2)) {
-      second = i;
-      first = map.get(target-nums[i]);
-    }
-    else {
-      map.set(nums[i], i);
-      if (map.has(target-nums[i])) {
-        second = i;
-        if (second !== map.get(target-nums[i])) {
-          first = map.get(target-nums[i]);
-          break;
-        }
+var countAndSay = function(n) {
+  if (n === 1) {
+    return "1";
+  }
+  var arr = ["1"];
+  while (arr.length !== n) {
+    var str = arr[arr.length-1];
+    var newStr = "";
+    var j = 0;
+    for (var i = 1; i < str.length; i++) {
+      if (str[i] !== str[j]) {
+        newStr = newStr+parseInt(i-j)+str[j];
+        j = i;
       }
     }
+    newStr = newStr+parseInt(i-j)+str[j];
+    arr.push(newStr);
   }
-  return [first, second];
+  return arr[arr.length-1];
 }
-var nums = [2, 7, 11, 15];
-var target = 9;
-console.log(twoSum(nums, target));
+var n = 1;
+console.log(countAndSay(n));
