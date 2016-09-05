@@ -21,11 +21,11 @@ var countAndSay = function(n) {
     var j = 0;
     for (var i = 1; i < str.length; i++) {
       if (str[i] !== str[j]) {
-        newStr = newStr+parseInt(i-j)+str[j];
+        newStr = newStr+(i-j).toString()+str[j];
         j = i;
       }
     }
-    newStr = newStr+parseInt(i-j)+str[j];
+    newStr = newStr+(i-j).toString()+str[j];
     arr.push(newStr);
   }
   return arr[arr.length-1];
