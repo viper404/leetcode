@@ -80,7 +80,7 @@ var threeSum = function(nums) {
         }
         if ((k-j) > 2) {
           k--;
-          j--;
+          j++;
         }
         else {
           k--;
