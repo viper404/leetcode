@@ -19,7 +19,7 @@ var countAndSay = function(n) {
     curr = "";
     for (var j = 1; j < prev.length; j++) {
       if (say !== prev[j]) {
-        curr = curr+parseInt(count)+say;
+        curr = curr+count.toString()+say;
         say = prev[j];
         count = 1;
       }
@@ -27,7 +27,7 @@ var countAndSay = function(n) {
         count++;
       }
     }
-    curr = curr+parseInt(count)+say;
+    curr = curr+count.toString()+say;
   }
   return curr;
 }
