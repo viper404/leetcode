@@ -79,8 +79,8 @@ var threeSum = function(nums) {
           j++;
         }
         if ((k-j) > 2) {
-          k--;
           j++;
+          k--;
         }
         else {
           k--;
