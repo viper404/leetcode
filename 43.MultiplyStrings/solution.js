@@ -1,39 +1,36 @@
-// 1. Two Sum
-// Given an array of integers, return indices of the two numbers such that they add up to a specific target.
-// You may assume that each input would have exactly one solution.
-// Example:
-// Given nums = [2, 7, 11, 15], target = 9,
-// Because nums[0] + nums[1] = 2 + 7 = 9,
-// return [0, 1].
+// 43. Multiply Strings
+// Given two numbers represented as strings, return multiplication of the numbers as a string.
+// Note:
+// The numbers can be arbitrarily large and are non-negative.
+// Converting the input string to integer is NOT allowed.
+// You should NOT use internal library such as BigInteger.
 // /**
-//  * @param {number[]} nums
-//  * @param {number} target
-//  * @return {number[]}
+//  * @param {string} num1
+//  * @param {string} num2
+//  * @return {string}
 //  */
-// UPDATE (2016/2/13):
-// The return format had been changed to zero-based indices. Please read the above updated description carefully.
-var twoSum = function(nums, target) {
-  var first = 0;
-  var second = 0;
-  var map = new Map();
-  for (var i = 0; i < nums.length; i++) {
-    if ((map.has(nums[i])) && (nums[i] === target/2)) {
-      second = i;
-      first = map.get(target-nums[i]);
-    }
-    else {
-      map.set(nums[i], i);
-      if (map.has(target-nums[i])) {
-        second = i;
-        if (second !== map.get(target-nums[i])) {
-          first = map.get(target-nums[i]);
-          break;
-        }
-      }
+var multiply = function(num1, num2) {
+  if ((num1 === "0") || (num2 === "0")) {
+    return "0";
+  }
+  var str = "0123456789";
+  var arr = [];
+  for (var n = 0; n < num1.length+num2.length; n++) {
+    arr[n] = 0;
+  }
+  for (var i = num1.length-1; i >= 0; i--) {
+    for (var j = num2.length-1; j >= 0; j--) {
+      var mul = str.indexOf(num1[i])*str.indexOf(num2[j]);
+      var sum = mul+arr[i+j+1];
+      arr[i+j] = arr[i+j]+Math.floor(sum/10);
+      arr[i+j+1] = sum%10;
     }
   }
-  return [first, second];
+  if (arr[0] === 0) {
+    arr.shift();
+  }
+  return arr.join("");
 }
-var nums = [2, 7, 11, 15];
-var target = 9;
-console.log(twoSum(nums, target));
+var num1 = "0";
+var num2 = "0";
+console.log(multiply(num1, num2));
