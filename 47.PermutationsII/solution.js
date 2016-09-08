@@ -1,39 +1,40 @@
-// 1. Two Sum
-// Given an array of integers, return indices of the two numbers such that they add up to a specific target.
-// You may assume that each input would have exactly one solution.
-// Example:
-// Given nums = [2, 7, 11, 15], target = 9,
-// Because nums[0] + nums[1] = 2 + 7 = 9,
-// return [0, 1].
+// 47. Permutations II
+// Given a collection of numbers that might contain duplicates, return all possible unique permutations.
+// For example,
+// [1,1,2] have the following unique permutations:
+// [
+//   [1,1,2],
+//   [1,2,1],
+//   [2,1,1]
+// ]
 // /**
 //  * @param {number[]} nums
-//  * @param {number} target
-//  * @return {number[]}
+//  * @return {number[][]}
 //  */
-// UPDATE (2016/2/13):
-// The return format had been changed to zero-based indices. Please read the above updated description carefully.
-var twoSum = function(nums, target) {
-  var first = 0;
-  var second = 0;
-  var map = new Map();
-  for (var i = 0; i < nums.length; i++) {
-    if ((map.has(nums[i])) && (nums[i] === target/2)) {
-      second = i;
-      first = map.get(target-nums[i]);
-    }
-    else {
-      map.set(nums[i], i);
-      if (map.has(target-nums[i])) {
-        second = i;
-        if (second !== map.get(target-nums[i])) {
-          first = map.get(target-nums[i]);
-          break;
-        }
+var permuteUnique = function(nums) {
+  var arrs = [];
+  nums.sort(sortNumber);
+  helper(nums, 0, [], arrs);
+  return arrs;
+}
+function helper(nums, index, arr, arrs) {
+  if (nums.length === 0) {
+    arrs.push(arr);
+  }
+  else {
+    for (var i = 0; i < nums.length; i++) {
+      if ((i > 0) && (nums[i] === nums[i-1])) {
+        continue;
       }
+      var newNums = [].concat(nums);
+      var newNum = newNums[i];
+      newNums.splice(i, 1);
+      helper(newNums, 0, arr.concat([newNum]), arrs);
     }
   }
-  return [first, second];
 }
-var nums = [2, 7, 11, 15];
-var target = 9;
-console.log(twoSum(nums, target));
+function sortNumber(a, b) {
+  return a-b;
+}
+var nums = [1,1,2];
+console.log(permuteUnique(nums));
