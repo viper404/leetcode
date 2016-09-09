@@ -1,39 +1,24 @@
-// 1. Two Sum
-// Given an array of integers, return indices of the two numbers such that they add up to a specific target.
-// You may assume that each input would have exactly one solution.
-// Example:
-// Given nums = [2, 7, 11, 15], target = 9,
-// Because nums[0] + nums[1] = 2 + 7 = 9,
-// return [0, 1].
+// 48. Rotate Image
+// You are given an n x n 2D matrix representing an image.
+// Rotate the image by 90 degrees (clockwise).
+// Follow up:
+// Could you do this in-place?
 // /**
-//  * @param {number[]} nums
-//  * @param {number} target
-//  * @return {number[]}
+//  * @param {number[][]} matrix
+//  * @return {void} Do not return anything, modify matrix in-place instead.
 //  */
-// UPDATE (2016/2/13):
-// The return format had been changed to zero-based indices. Please read the above updated description carefully.
-var twoSum = function(nums, target) {
-  var first = 0;
-  var second = 0;
-  var map = new Map();
-  for (var i = 0; i < nums.length; i++) {
-    if ((map.has(nums[i])) && (nums[i] === target/2)) {
-      second = i;
-      first = map.get(target-nums[i]);
-    }
-    else {
-      map.set(nums[i], i);
-      if (map.has(target-nums[i])) {
-        second = i;
-        if (second !== map.get(target-nums[i])) {
-          first = map.get(target-nums[i]);
-          break;
-        }
-      }
+var rotate = function(matrix) {
+  var n = matrix.length;
+  for (var j = 0; j < Math.floor(n/2); j++) {
+    for (var i = 0; i < n-1-2*j; i++) {
+      var temp = matrix[n-1-j][n-1-i-j];
+      matrix[n-1-j][n-1-i-j] = matrix[i+j][n-1-j];
+      matrix[i+j][n-1-j] = matrix[0+j][i+j];
+      matrix[0+j][i+j] = matrix[n-1-i-j][0+j];
+      matrix[n-1-i-j][0+j] = temp;
     }
   }
-  return [first, second];
 }
-var nums = [2, 7, 11, 15];
-var target = 9;
-console.log(twoSum(nums, target));
+var matrix = [[1]];
+rotate(matrix);
+console.log(matrix);
