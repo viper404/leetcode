@@ -1,39 +1,41 @@
-// 1. Two Sum
-// Given an array of integers, return indices of the two numbers such that they add up to a specific target.
-// You may assume that each input would have exactly one solution.
-// Example:
-// Given nums = [2, 7, 11, 15], target = 9,
-// Because nums[0] + nums[1] = 2 + 7 = 9,
-// return [0, 1].
+// 49. Group Anagrams
+// Given an array of strings, group anagrams together.
+// For example, given: ["eat", "tea", "tan", "ate", "nat", "bat"],
+// Return:
+// [
+//   ["ate", "eat","tea"],
+//   ["nat","tan"],
+//   ["bat"]
+// ]
+// Note: All inputs will be in lower-case.
 // /**
-//  * @param {number[]} nums
-//  * @param {number} target
-//  * @return {number[]}
+//  * @param {string[]} strs
+//  * @return {string[][]}
 //  */
-// UPDATE (2016/2/13):
-// The return format had been changed to zero-based indices. Please read the above updated description carefully.
-var twoSum = function(nums, target) {
-  var first = 0;
-  var second = 0;
+var groupAnagrams = function(strs) {
+  var arrs = [];
+  var newStrs = [];
+  for (var i = 0; i < strs.length; i++) {
+    var cmp = strs[i];
+    cmp = cmp.split("");
+    cmp.sort();
+    cmp = cmp.join("");
+    newStrs.push(cmp);
+  }
+  var k = 0;
   var map = new Map();
-  for (var i = 0; i < nums.length; i++) {
-    if ((map.has(nums[i])) && (nums[i] === target/2)) {
-      second = i;
-      first = map.get(target-nums[i]);
+  for (var j = 0; j < strs.length; j++) {
+    if (map.has(newStrs[j])) {
+      arrs[map.get(newStrs[j])].push(strs[j]);
     }
     else {
-      map.set(nums[i], i);
-      if (map.has(target-nums[i])) {
-        second = i;
-        if (second !== map.get(target-nums[i])) {
-          first = map.get(target-nums[i]);
-          break;
-        }
-      }
+      arrs[k] = [];
+      arrs[k].push(strs[j]);
+      map.set(newStrs[j], k);
+      k++;
     }
   }
-  return [first, second];
+  return arrs;
 }
-var nums = [2, 7, 11, 15];
-var target = 9;
-console.log(twoSum(nums, target));
+var strs = [""];
+console.log(groupAnagrams(strs));
