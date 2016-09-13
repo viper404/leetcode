@@ -2,6 +2,10 @@
 > ## solution by [wz366](https://discuss.leetcode.com/topic/24494/share-my-short-java-solution)
 
 ```javascript
+/**
+ * @param {string[]} strs
+ * @return {string[][]}
+ */
 var groupAnagrams = function(strs) {
   var arrs = [];
   if (strs.length === 0) {
@@ -29,6 +33,10 @@ var groupAnagrams = function(strs) {
 > ## solution by viper404
 
 ```javascript
+/**
+ * @param {string[]} strs
+ * @return {string[][]}
+ */
 var groupAnagrams = function(strs) {
   var arrs = [];
   var newStrs = [];
