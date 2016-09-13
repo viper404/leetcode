@@ -8,10 +8,10 @@
 //   ["bat"]
 // ]
 // Note: All inputs will be in lower-case.
-// /**
-//  * @param {string[]} strs
-//  * @return {string[][]}
-//  */
+/**
+ * @param {string[]} strs
+ * @return {string[][]}
+ */
 var groupAnagrams = function(strs) {
   var arrs = [];
   var newStrs = [];
