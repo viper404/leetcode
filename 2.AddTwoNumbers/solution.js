@@ -4,18 +4,18 @@
 // Add the two numbers and return it as a linked list.
 // Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
 // Output: 7 -> 0 -> 8
-// /**
-//  * Definition for singly-linked list.
-//  * function ListNode(val) {
-//  *     this.val = val;
-//  *     this.next = null;
-//  * }
-//  */
-// /**
-//  * @param {ListNode} l1
-//  * @param {ListNode} l2
-//  * @return {ListNode}
-//  */
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+/**
+ * @param {ListNode} l1
+ * @param {ListNode} l2
+ * @return {ListNode}
+ */
 var addTwoNumbers = function(l1, l2) {
   var larger = 0;
   var flag = 0;
