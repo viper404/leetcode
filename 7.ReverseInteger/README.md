@@ -2,6 +2,10 @@
 > ## solution by [bitzhuwei](https://discuss.leetcode.com/topic/6104/my-accepted-15-lines-of-code-for-java)
 
 ```javascript
+/**
+ * @param {number} x
+ * @return {number}
+ */
 var reverse = function(x) {
   var y = 0;
   var z = 0;
@@ -29,6 +33,10 @@ var reverse = function(x) {
 > ## solution by viper404
 
 ```javascript
+/**
+ * @param {number} x
+ * @return {number}
+ */
 var reverse = function(x) {
   var temp = "";
   var str = "";
