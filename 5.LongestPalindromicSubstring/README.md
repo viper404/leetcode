@@ -2,6 +2,10 @@
 > ## solution by [liji94188](https://discuss.leetcode.com/topic/21848/ac-relatively-short-and-very-clear-java-solution)
 
 ```javascript
+/**
+ * @param {string} s
+ * @return {string}
+ */
 var longestPalindrome = function(s) {
   var str = "";
   var length = 0;
@@ -34,6 +38,10 @@ function isPalindrome(s, begin, end) {
 > ## solution by viper404
 
 ```javascript
+/**
+ * @param {string} s
+ * @return {string}
+ */
 var longestPalindrome = function(s) {
   var j = 1;
   var str = "";
