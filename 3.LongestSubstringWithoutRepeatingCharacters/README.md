@@ -2,6 +2,10 @@
 > ## solution by [cbmbbz](https://discuss.leetcode.com/topic/8232/11-line-simple-java-solution-o-n-with-explanation)
 
 ```javascript
+/**
+ * @param {string} s
+ * @return {number}
+ */
 var lengthOfLongestSubstring = function(s) {
   var j = 0;
   var max = 0;
@@ -19,6 +23,10 @@ var lengthOfLongestSubstring = function(s) {
 > ## solution by viper404
 
 ```javascript
+/**
+ * @param {string} s
+ * @return {number}
+ */
 var lengthOfLongestSubstring = function(s) {
   var temp = "";
   var str = "";
