@@ -8,11 +8,11 @@
 // Write the code that will take a string and make this conversion given a number of rows:
 // string convert(string text, int nRows);
 // convert("PAYPALISHIRING", 3) should return "PAHNAPLSIIGYIR".
-// /**
-//  * @param {string} s
-//  * @param {number} numRows
-//  * @return {string}
-//  */
+/**
+ * @param {string} s
+ * @param {number} numRows
+ * @return {string}
+ */
 var convert = function(s, numRows) {
   var arr = new Array(numRows);
   for (var i = 0; i < numRows; i++) {
