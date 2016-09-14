@@ -2,6 +2,11 @@
 > ## solution by [waisuan](https://discuss.leetcode.com/topic/16687/my-short-java-solution-o-n-hashmap)
 
 ```javascript
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
 var twoSum = function(nums, target) {
   var map = new Map();
   for (var i = 0; i < nums.length; i++) {
@@ -15,6 +20,11 @@ var twoSum = function(nums, target) {
 > ## solution by viper404
 
 ```javascript
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
 var twoSum = function(nums, target) {
   var first = 0;
   var second = 0;
