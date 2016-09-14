@@ -2,6 +2,10 @@
 > ## solution by [annieqt](https://discuss.leetcode.com/topic/2666/my-simple-solution)
 
 ```javascript
+/**
+ * @param {string} str
+ * @return {number}
+ */
 var myAtoi = function(str) {
   if (str.length === 0) {
     return 0;
@@ -29,6 +33,10 @@ var myAtoi = function(str) {
 > ## solution by viper404
 
 ```javascript
+/**
+ * @param {string} str
+ * @return {number}
+ */
 var myAtoi = function(str) {
   var patt = /(\+)*(\-)*(\d)*/g;
   var temp = str.match(patt);
