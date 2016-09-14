@@ -2,6 +2,18 @@
 > ## solution by [dchen0215](https://discuss.leetcode.com/topic/6220/my-accepted-java-solution)
 
 ```javascript
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+/**
+ * @param {ListNode} l1
+ * @param {ListNode} l2
+ * @return {ListNode}
+ */
 var addTwoNumbers = function(l1, l2) {
   var previous = new ListNode(0);
   var head = previous;
@@ -21,6 +33,18 @@ var addTwoNumbers = function(l1, l2) {
 > ## solution by viper404
 
 ```javascript
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+/**
+ * @param {ListNode} l1
+ * @param {ListNode} l2
+ * @return {ListNode}
+ */
 var addTwoNumbers = function(l1, l2) {
   var larger = 0;
   var flag = 0;
