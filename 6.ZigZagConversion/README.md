@@ -2,6 +2,11 @@
 > ## solution by [dylan_yu](https://discuss.leetcode.com/topic/3162/easy-to-understand-java-solution)
 
 ```javascript
+/**
+ * @param {string} s
+ * @param {number} numRows
+ * @return {string}
+ */
 var convert = function(s, numRows) {
   var arr = new Array(numRows);
   for (var i = 0; i < numRows; i++) {
@@ -24,6 +29,11 @@ var convert = function(s, numRows) {
 > ## solution by viper404
 
 ```javascript
+/**
+ * @param {string} s
+ * @param {number} numRows
+ * @return {string}
+ */
 var convert = function(s, numRows) {
   var arr = [];
   var str = "";
