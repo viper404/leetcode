@@ -2,6 +2,10 @@
 > ## solution by [cbmbbz](https://discuss.leetcode.com/topic/8090/9-line-accepted-java-code-without-the-need-of-handling-overflow)
 
 ```javascript
+/**
+ * @param {number} x
+ * @return {boolean}
+ */
 var isPalindrome = function(x) {
   if ((x < 0) || ((x !== 0) && (x%10 === 0))) {
     return false;
@@ -17,6 +21,10 @@ var isPalindrome = function(x) {
 > ## solution by viper404
 
 ```javascript
+/**
+ * @param {number} x
+ * @return {boolean}
+ */
 var isPalindrome = function(x) {
   if (x < 0) {
     return false;
