@@ -8,10 +8,10 @@
 // However, if you have solved the problem "Reverse Integer", you know that the reversed integer might overflow.
 // How would you handle such case?
 // There is a more generic way of solving this problem.
-// /**
-//  * @param {number} x
-//  * @return {boolean}
-//  */
+/**
+ * @param {number} x
+ * @return {boolean}
+ */
 var isPalindrome = function(x) {
   if (x < 0) {
     return false;
