@@ -2,6 +2,10 @@
 > ## solution by [kongweihan](https://discuss.leetcode.com/topic/3462/yet-another-way-to-see-what-happens-in-the-o-n-algorithm)
 
 ```javascript
+/**
+ * @param {number[]} height
+ * @return {number}
+ */
 var maxArea = function(height) {
   var max = 0;
   var left = 0;
@@ -16,6 +20,10 @@ var maxArea = function(height) {
 > ## solution by viper404
 
 ```javascript
+/**
+ * @param {number[]} height
+ * @return {number}
+ */
 var maxArea = function(height) {
   var i = 0;
   var j = height.length-1;
