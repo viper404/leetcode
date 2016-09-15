@@ -2,6 +2,10 @@
 > ## solution by [fabrizio3](https://discuss.leetcode.com/topic/12384/simple-solution)
 
 ```javascript
+/**
+ * @param {number} num
+ * @return {string}
+ */
 var intToRoman = function(num) {
   var M = ["", "M", "MM", "MMM"];
   var C = ["", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"];
@@ -13,6 +17,10 @@ var intToRoman = function(num) {
 > ## solution by viper404
 
 ```javascript
+/**
+ * @param {number} num
+ * @return {string}
+ */
 var intToRoman = function(num) {
   var arr = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000];
   var str = ["I", "IV", "V", "IX", "X", "XL", "L", "XC", "C", "CD", "D", "CM", "M"];
