@@ -3,10 +3,10 @@
 // n vertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0).
 // Find two lines, which together with x-axis forms a container, such that the container contains the most water.
 // Note: You may not slant the container.
-// /**
-//  * @param {number[]} height
-//  * @return {number}
-//  */
+/**
+ * @param {number[]} height
+ * @return {number}
+ */
 var maxArea = function(height) {
   var i = 0;
   var j = height.length-1;
