@@ -1,10 +1,10 @@
 // 13. Roman to Integer
 // Given a roman numeral, convert it to an integer.
 // Input is guaranteed to be within the range from 1 to 3999.
-// /**
-//  * @param {string} s
-//  * @return {number}
-//  */
+/**
+ * @param {string} s
+ * @return {number}
+ */
 var romanToInt = function(s) {
   var arr = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000];
   var str = ["I", "IV", "V", "IX", "X", "XL", "L", "XC", "C", "CD", "D", "CM", "M"];
