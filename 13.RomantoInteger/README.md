@@ -2,6 +2,10 @@
 > ## solution by [jaqenhgar](https://discuss.leetcode.com/topic/27024/java-solution-clean-and-simple-7-ms)
 
 ```javascript
+/**
+ * @param {string} s
+ * @return {number}
+ */
 var romanToInt = function(s) {
   var map = new Map();
   map.set("I", 1);
@@ -24,6 +28,10 @@ var romanToInt = function(s) {
 > ## solution by viper404
 
 ```javascript
+/**
+ * @param {string} s
+ * @return {number}
+ */
 var romanToInt = function(s) {
   var arr = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000];
   var str = ["I", "IV", "V", "IX", "X", "XL", "L", "XC", "C", "CD", "D", "CM", "M"];
