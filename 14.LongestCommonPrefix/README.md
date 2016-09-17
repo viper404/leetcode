@@ -2,6 +2,10 @@
 > ## solution by [StefanPochmann](https://discuss.leetcode.com/topic/6987/java-code-with-13-lines)
 
 ```javascript
+/**
+ * @param {string[]} strs
+ * @return {string}
+ */
 var longestCommonPrefix = function(strs) {
   if (strs.length === 0) {
     return "";
@@ -18,6 +22,10 @@ var longestCommonPrefix = function(strs) {
 > ## solution by viper404
 
 ```javascript
+/**
+ * @param {string[]} strs
+ * @return {string}
+ */
 var longestCommonPrefix = function(strs) {
   if (strs.length !== 0) {
     strs.sort();
