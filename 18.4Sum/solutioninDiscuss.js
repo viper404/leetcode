@@ -9,11 +9,11 @@
 //   [-2, -1, 1, 2],
 //   [-2,  0, 0, 2]
 // ]
-// /**
-//  * @param {number[]} nums
-//  * @param {number} target
-//  * @return {number[][]}
-//  */
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[][]}
+ */
 var fourSum = function(nums, target) {
   if (nums.length < 4) {
     return [];
