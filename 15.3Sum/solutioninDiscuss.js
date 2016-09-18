@@ -8,10 +8,10 @@
 //   [-1, 0, 1],
 //   [-1, -1, 2]
 // ]
-// /**
-//  * @param {number[]} nums
-//  * @return {number[][]}
-//  */
+/**
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
 var threeSum = function(nums) {
   if (nums.length < 3) {
     return [];
