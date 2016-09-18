@@ -2,6 +2,10 @@
 > ## solution by [yavinci](https://discuss.leetcode.com/topic/28857/easiest-java-solution)
 
 ```javascript
+/**
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
 var threeSum = function(nums) {
   if (nums.length < 3) {
     return [];
@@ -44,6 +48,10 @@ function sortNumber(a, b) {
 > ## solution by viper404
 
 ```javascript
+/**
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
 var threeSum = function(nums) {
   nums.sort(sortNumber);
   var arrs = [];
