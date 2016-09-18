@@ -5,11 +5,11 @@
 // For example, given array S = {-1 2 1 -4}, and target = 1.
 // The sum that is closest to the target is 2.
 // (-1 + 2 + 1 = 2).
-// /**
-//  * @param {number[]} nums
-//  * @param {number} target
-//  * @return {number}
-//  */
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number}
+ */
 var threeSumClosest = function(nums, target) {
   if (nums.length < 3) {
     return 0;
