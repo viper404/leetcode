@@ -2,6 +2,11 @@
 > ## solution by [spritmouselet](https://discuss.leetcode.com/topic/5192/java-solution-with-o-n2-for-reference)
 
 ```javascript
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number}
+ */
 var threeSumClosest = function(nums, target) {
   if (nums.length < 3) {
     return 0;
@@ -52,6 +57,11 @@ function sortNumber(a, b) {
 > ## solution by viper404
 
 ```javascript
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number}
+ */
 var threeSumClosest = function(nums, target) {
   nums.sort(sortNumber);
   var i = 0;
