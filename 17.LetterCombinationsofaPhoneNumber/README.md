@@ -2,6 +2,10 @@
 > ## solution by [lirensun](https://discuss.leetcode.com/topic/8465/my-java-solution-with-fifo-queue)
 
 ```javascript
+/**
+ * @param {string} digits
+ * @return {string[]}
+ */
 var letterCombinations = function(digits) {
   if (digits.length === 0) {
     return [];
@@ -26,6 +30,10 @@ var letterCombinations = function(digits) {
 > ## solution by viper404
 
 ```javascript
+/**
+ * @param {string} digits
+ * @return {string[]}
+ */
 var letterCombinations = function(digits) {
   var arrs = [[], ["*"], ["a", "b", "c"], ["d", "e", "f"], ["g", "h", "i"],
   ["j", "k", "l"], ["m", "n", "o"], ["p", "q", "r", "s"], ["t", "u", "v"], ["w", "x", "y", "z"]];
