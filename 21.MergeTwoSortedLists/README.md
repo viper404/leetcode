@@ -2,6 +2,18 @@
 > ## solution by [nightowl](https://discuss.leetcode.com/topic/22199/simple-recursive-java-solution)
 
 ```javascript
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+/**
+ * @param {ListNode} l1
+ * @param {ListNode} l2
+ * @return {ListNode}
+ */
 var mergeTwoLists = function(l1, l2) {
   if (l1 === null) {
     return l2;
@@ -22,6 +34,18 @@ var mergeTwoLists = function(l1, l2) {
 > ## solution by viper404
 
 ```javascript
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+/**
+ * @param {ListNode} l1
+ * @param {ListNode} l2
+ * @return {ListNode}
+ */
 var mergeTwoLists = function(l1, l2) {
   if ((l1 === null) && (l2 === null)) {
     return [];
