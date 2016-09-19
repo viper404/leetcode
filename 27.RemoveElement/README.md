@@ -2,6 +2,11 @@
 > ## solution by [cbmbbz](https://discuss.leetcode.com/topic/5205/9-line-java-solution)
 
 ```javascript
+/**
+ * @param {number[]} nums
+ * @param {number} val
+ * @return {number}
+ */
 var removeElement = function(nums, val) {
   var len = nums.length;
   for (var i = 0; i < len; i++) {
@@ -15,6 +20,11 @@ var removeElement = function(nums, val) {
 > ## solution by viper404
 
 ```javascript
+/**
+ * @param {number[]} nums
+ * @param {number} val
+ * @return {number}
+ */
 var removeElement = function(nums, val) {
   if (nums.length === 0) {
     return 0;
