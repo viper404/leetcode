@@ -2,6 +2,11 @@
 > ## solution by [jeantimex](https://discuss.leetcode.com/topic/18839/elegant-java-solution)
 
 ```javascript
+/**
+ * @param {string} haystack
+ * @param {string} needle
+ * @return {number}
+ */
 var strStr = function(haystack, needle) {
   for (var i = 0; ; i++) {
     for (var j = 0; ; j++) {
@@ -21,6 +26,11 @@ var strStr = function(haystack, needle) {
 > ## solution by viper404
 
 ```javascript
+/**
+ * @param {string} haystack
+ * @param {string} needle
+ * @return {number}
+ */
 var strStr = function(haystack, needle) {
   if (needle === "") {
     return 0;
