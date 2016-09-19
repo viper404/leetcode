@@ -8,10 +8,10 @@
 //   "()(())",
 //   "()()()"
 // ]
-// /**
-//  * @param {number} n
-//  * @return {string[]}
-//  */
+/**
+ * @param {number} n
+ * @return {string[]}
+ */
 var generateParenthesis = function(n) {
   var arr = [];
   backtrack(arr, "", 0, 0, n);
