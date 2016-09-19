@@ -2,6 +2,10 @@
 > ## solution by [daniel52](https://discuss.leetcode.com/topic/9006/java-solution-with-stack-very-easy-to-read-straightforward)
 
 ```javascript
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
 var isValid = function(s) {
   var map = new Map();
   map.set("(", ")");
@@ -32,6 +36,10 @@ var isValid = function(s) {
 > ## solution by viper404
 
 ```javascript
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
 var isValid = function(s) {
   var patt = /(\(\)|\{\}|\[\])*/g;
   if (s.length%2 === 1) {
