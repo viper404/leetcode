@@ -2,6 +2,10 @@
 > ## solution by [left.peter](https://discuss.leetcode.com/topic/3474/an-iterative-method)
 
 ```javascript
+/**
+ * @param {number} n
+ * @return {string[]}
+ */
 var generateParenthesis = function(n) {
   var arrs = [];
   arrs.push([""]);
@@ -32,6 +36,10 @@ var generateParenthesis = function(n) {
 > ## solution by viper404
 
 ```javascript
+/**
+ * @param {number} n
+ * @return {string[]}
+ */
 var generateParenthesis = function(n) {
   var arr = [];
   backtrack(arr, "", 0, 0, n);
