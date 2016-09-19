@@ -9,11 +9,11 @@
 // 1. Try two pointers.
 // 2. Did you use the property of "the order of elements can be changed"?
 // 3. What happens when the elements to remove are rare?
-// /**
-//  * @param {number[]} nums
-//  * @param {number} val
-//  * @return {number}
-//  */
+/**
+ * @param {number[]} nums
+ * @param {number} val
+ * @return {number}
+ */
 var removeElement = function(nums, val) {
   if (nums.length === 0) {
     return 0;
