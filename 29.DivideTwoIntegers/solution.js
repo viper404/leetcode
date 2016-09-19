@@ -1,11 +1,11 @@
 // 29. Divide Two Integers
 // Divide two integers without using multiplication, division and mod operator.
 // If it is overflow, return MAX_INT.
-// /**
-//  * @param {number} dividend
-//  * @param {number} divisor
-//  * @return {number}
-//  */
+/**
+ * @param {number} dividend
+ * @param {number} divisor
+ * @return {number}
+ */
 var divide = function(dividend, divisor) {
   if (divisor === 0) {
     return 0;
