@@ -2,6 +2,10 @@
 > ## solution by [StefanPochmann](https://discuss.leetcode.com/topic/17252/5-lines-c-java-nicer-loops)
 
 ```javascript
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
 var removeDuplicates = function(nums) {
   var i = (nums.length > 0) ? 1 : 0;
   for (var j in nums) {
@@ -15,6 +19,10 @@ var removeDuplicates = function(nums) {
 > ## solution by viper404
 
 ```javascript
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
 var removeDuplicates = function(nums) {
   if (nums.length === 0) {
     return [];
