@@ -2,6 +2,11 @@
 > ## solution by [jianchao.li.fighter](https://discuss.leetcode.com/topic/15568/detailed-explained-8ms-c-solution)
 
 ```javascript
+/**
+ * @param {number} dividend
+ * @param {number} divisor
+ * @return {number}
+ */
 var divide = function(dividend, divisor) {
   if (divisor === 0) {
     return 0;
@@ -29,6 +34,11 @@ var divide = function(dividend, divisor) {
 > ## solution by viper404
 
 ```javascript
+/**
+ * @param {number} dividend
+ * @param {number} divisor
+ * @return {number}
+ */
 var divide = function(dividend, divisor) {
   if (divisor === 0) {
     return 0;
