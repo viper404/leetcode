@@ -2,6 +2,11 @@
 > ## solution by viper404
 
 ```javascript
+/**
+ * @param {number[]} candidates
+ * @param {number} target
+ * @return {number[][]}
+ */
 var combinationSum2 = function(candidates, target) {
   var arrs = [];
   candidates.sort(sortNumber);
