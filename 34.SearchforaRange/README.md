@@ -2,6 +2,11 @@
 > ## solution by [stellari](https://discuss.leetcode.com/topic/5891/clean-iterative-solution-with-two-binary-searches-with-explanation)
 
 ```javascript
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
 var searchRange = function(nums, target) {
   var i = 0;
   var j = nums.length-1;
@@ -31,6 +36,11 @@ var searchRange = function(nums, target) {
 > ## solution by viper404
 
 ```javascript
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
 var searchRange = function(nums, target) {
   var i = 0;
   var j = nums.length-1;
