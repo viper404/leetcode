@@ -2,6 +2,10 @@
 > ## solution by [StefanPochmann](https://discuss.leetcode.com/topic/27436/short-simple-java-using-strings)
 
 ```javascript
+/**
+ * @param {character[][]} board
+ * @return {boolean}
+ */
 var isValidSudoku = function(board) {
   var map = new Map();
   for (var i = 0; i < 9; i++) {
@@ -25,6 +29,10 @@ var isValidSudoku = function(board) {
 > ## solution by viper404
 
 ```javascript
+/**
+ * @param {character[][]} board
+ * @return {boolean}
+ */
 var isValidSudoku = function(board) {
   var str = "";
   for (var i = 0; i < board.length; i++) {
