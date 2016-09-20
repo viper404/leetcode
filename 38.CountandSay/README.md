@@ -2,6 +2,10 @@
 > ## solution by [reeclapple](https://discuss.leetcode.com/topic/2309/show-an-answer-in-java)
 
 ```javascript
+/**
+ * @param {number} n
+ * @return {string}
+ */
 var countAndSay = function(n) {
   var curr = "1";
   for (var i = 0; i < n-1; i++) {
@@ -27,6 +31,10 @@ var countAndSay = function(n) {
 > ## solution by viper404
 
 ```javascript
+/**
+ * @param {number} n
+ * @return {string}
+ */
 var countAndSay = function(n) {
   if (n === 1) {
     return "1";
