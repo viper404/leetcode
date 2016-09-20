@@ -4,11 +4,11 @@
 // For example,
 // Given [5, 7, 7, 8, 8, 10] and target value 8,
 // return [3, 4].
-// /**
-//  * @param {number[]} nums
-//  * @param {number} target
-//  * @return {number[]}
-//  */
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
 var searchRange = function(nums, target) {
   var i = 0;
   var j = nums.length-1;
