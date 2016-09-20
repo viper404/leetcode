@@ -12,11 +12,11 @@
 //   [2, 6],
 //   [1, 1, 6]
 // ]
-// /**
-//  * @param {number[]} candidates
-//  * @param {number} target
-//  * @return {number[][]}
-//  */
+/**
+ * @param {number[]} candidates
+ * @param {number} target
+ * @return {number[][]}
+ */
 var combinationSum2 = function(candidates, target) {
   var arrs = [];
   candidates.sort(sortNumber);
