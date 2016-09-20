@@ -2,6 +2,11 @@
 > ## solution by [AmmsA](https://discuss.leetcode.com/topic/7874/my-8-line-java-solution)
 
 ```javascript
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number}
+ */
 var searchInsert = function(nums, target) {
   var lo = 0;
   var hi = nums.length-1;
@@ -23,6 +28,11 @@ var searchInsert = function(nums, target) {
 > ## solution by viper404
 
 ```javascript
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number}
+ */
 var searchInsert = function(nums, target) {
   if (target < nums[0]) {
     return 0;
