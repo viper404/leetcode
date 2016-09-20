@@ -2,6 +2,10 @@
 > ## solution by [jianchao.li.fighter](https://discuss.leetcode.com/topic/15216/a-simple-algorithm-from-wikipedia-with-c-implementation-can-be-used-in-permutations-and-permutations-ii)
 
 ```javascript
+/**
+ * @param {number[]} nums
+ * @return {void} Do not return anything, modify nums in-place instead.
+ */
 var nextPermutation = function(nums) {
   var k = -1;
   for (var i = nums.length-2; i >= 0; i--) {
@@ -40,6 +44,10 @@ function reverse(arr, begin, end) {
 > ## solution by viper404
 
 ```javascript
+/**
+ * @param {number[]} nums
+ * @return {void} Do not return anything, modify nums in-place instead.
+ */
 var nextPermutation = function(nums) {
   if (nums.length === 1) {
     return;
