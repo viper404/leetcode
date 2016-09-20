@@ -2,6 +2,11 @@
 > ## solution by [shpolsky](https://discuss.leetcode.com/topic/8200/iterative-java-dp-solution)
 
 ```javascript
+/**
+ * @param {number[]} candidates
+ * @param {number} target
+ * @return {number[][]}
+ */
 var combinationSum = function(candidates, target) {
   candidates.sort(sortNumber);
   var dp = [[[]]];
@@ -32,6 +37,11 @@ function sortNumber(a, b) {
 > ## solution by viper404
 
 ```javascript
+/**
+ * @param {number[]} candidates
+ * @param {number} target
+ * @return {number[][]}
+ */
 var combinationSum = function(candidates, target) {
   var arrs = [];
   candidates.sort(sortNumber);
