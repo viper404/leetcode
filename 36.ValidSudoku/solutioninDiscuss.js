@@ -3,10 +3,10 @@
 // The Sudoku board could be partially filled, where empty cells are filled with the character '.'.
 // Note:
 // A valid Sudoku board (partially filled) is not necessarily solvable. Only the filled cells need to be validated.
-// /**
-//  * @param {character[][]} board
-//  * @return {boolean}
-//  */
+/**
+ * @param {character[][]} board
+ * @return {boolean}
+ */
 var isValidSudoku = function(board) {
   var map = new Map();
   for (var i = 0; i < 9; i++) {
