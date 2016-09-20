@@ -6,10 +6,10 @@
 // 21 is read off as "one 2, then one 1" or 1211.
 // Given an integer n, generate the nth sequence.
 // Note: The sequence of integers will be represented as a string.
-// /**
-//  * @param {number} n
-//  * @return {string}
-//  */
+/**
+ * @param {number} n
+ * @return {string}
+ */
 var countAndSay = function(n) {
   if (n === 1) {
     return "1";
