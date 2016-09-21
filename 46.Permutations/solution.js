@@ -10,10 +10,10 @@
 //   [3,1,2],
 //   [3,2,1]
 // ]
-// /**
-//  * @param {number[]} nums
-//  * @return {number[][]}
-//  */
+/**
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
 var permute = function(nums) {
   var arrs = [];
   helper(nums, 0, [], arrs);
