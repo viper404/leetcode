@@ -2,6 +2,10 @@
 > ## solution by [LuckyIdiot](https://discuss.leetcode.com/topic/9744/ac-java-in-place-solution-with-explanation-easy-to-understand)
 
 ```javascript
+/**
+ * @param {number[][]} matrix
+ * @return {void} Do not return anything, modify matrix in-place instead.
+ */
 var rotate = function(matrix) {
   for (var i = 0; i < matrix.length; i++) {
     for (var j = i; j < matrix[0].length; j++) {
@@ -22,6 +26,10 @@ var rotate = function(matrix) {
 > ## solution by viper404
 
 ```javascript
+/**
+ * @param {number[][]} matrix
+ * @return {void} Do not return anything, modify matrix in-place instead.
+ */
 var rotate = function(matrix) {
   var n = matrix.length;
   for (var j = 0; j < Math.floor(n/2); j++) {
