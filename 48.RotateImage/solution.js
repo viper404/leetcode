@@ -3,10 +3,10 @@
 // Rotate the image by 90 degrees (clockwise).
 // Follow up:
 // Could you do this in-place?
-// /**
-//  * @param {number[][]} matrix
-//  * @return {void} Do not return anything, modify matrix in-place instead.
-//  */
+/**
+ * @param {number[][]} matrix
+ * @return {void} Do not return anything, modify matrix in-place instead.
+ */
 var rotate = function(matrix) {
   var n = matrix.length;
   for (var j = 0; j < Math.floor(n/2); j++) {
