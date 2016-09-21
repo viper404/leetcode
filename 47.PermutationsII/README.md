@@ -2,6 +2,10 @@
 > ## solution by [shpolsky](https://discuss.leetcode.com/topic/12923/short-iterative-java-solution)
 
 ```javascript
+/**
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
 var permuteUnique = function(nums) {
   if (nums.length === 0) {
     return [];
@@ -27,6 +31,10 @@ var permuteUnique = function(nums) {
 > ## solution by viper404
 
 ```javascript
+/**
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
 var permuteUnique = function(nums) {
   var arrs = [];
   nums.sort(sortNumber);
