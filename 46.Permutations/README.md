@@ -2,6 +2,10 @@
 > ## solution by [cbmbbz](https://discuss.leetcode.com/topic/6377/my-ac-simple-iterative-java-python-solution)
 
 ```javascript
+/**
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
 var permute = function(nums) {
   if (nums.length === 0) {
     return [];
@@ -24,6 +28,10 @@ var permute = function(nums) {
 > ## solution by viper404
 
 ```javascript
+/**
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
 var permute = function(nums) {
   var arrs = [];
   helper(nums, 0, [], arrs);
