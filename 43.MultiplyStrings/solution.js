@@ -4,11 +4,11 @@
 // The numbers can be arbitrarily large and are non-negative.
 // Converting the input string to integer is NOT allowed.
 // You should NOT use internal library such as BigInteger.
-// /**
-//  * @param {string} num1
-//  * @param {string} num2
-//  * @return {string}
-//  */
+/**
+ * @param {string} num1
+ * @param {string} num2
+ * @return {string}
+ */
 var multiply = function(num1, num2) {
   if ((num1 === "0") || (num2 === "0")) {
     return "0";
