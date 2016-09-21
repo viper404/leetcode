@@ -2,6 +2,11 @@
 > ## solution by [lx223](https://discuss.leetcode.com/topic/13026/ac-solution-in-java-with-explanation)
 
 ```javascript
+/**
+ * @param {string} num1
+ * @param {string} num2
+ * @return {string}
+ */
 var multiply = function(num1, num2) {
   if ((num1 === "0") || (num2 === "0")) {
     return "0";
@@ -28,6 +33,11 @@ var multiply = function(num1, num2) {
 > ## solution by viper404
 
 ```javascript
+/**
+ * @param {string} num1
+ * @param {string} num2
+ * @return {string}
+ */
 var multiply = function(num1, num2) {
   if ((num1 === "0") || (num2 === "0")) {
     return "0";
