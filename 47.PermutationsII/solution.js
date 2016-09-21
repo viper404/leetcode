@@ -7,10 +7,10 @@
 //   [1,2,1],
 //   [2,1,1]
 // ]
-// /**
-//  * @param {number[]} nums
-//  * @return {number[][]}
-//  */
+/**
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
 var permuteUnique = function(nums) {
   var arrs = [];
   nums.sort(sortNumber);
