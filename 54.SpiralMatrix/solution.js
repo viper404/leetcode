@@ -42,3 +42,5 @@ var spiralOrder = function(matrix) {
   }
   return arr;
 }
+var matrix = [];
+console.log(spiralOrder(matrix));
